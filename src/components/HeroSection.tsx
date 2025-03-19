@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Button from './Button';
 import { Search } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const HeroSection = () => {
   return (
@@ -54,6 +55,9 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072')] opacity-5"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A2FB6] to-[#0A2FB6]/90"></div>
         </div>
+        
+        {/* Server Network Animation */}
+{/* Server Network Animation Component would go here - needs to be imported or created */}
 
         <div className="max-w-7xl mx-auto px-4 pt-32 pb-20 relative">
           <motion.div
@@ -77,14 +81,6 @@ const HeroSection = () => {
               >
                 Get Started Now
               </Button>
-            </div>
-
-            {/* Server Illustrations */}
-            <div className="absolute left-0 bottom-0 opacity-20">
-              <div className="w-64 h-64 border-2 border-white/20 transform rotate-45"></div>
-            </div>
-            <div className="absolute right-0 bottom-0 opacity-20">
-              <div className="w-64 h-64 border-2 border-white/20 transform rotate-45"></div>
             </div>
           </motion.div>
         </div>
