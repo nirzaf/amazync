@@ -1,46 +1,72 @@
-import { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 const FAQ = () => {
+  const { colors, gradients } = useTheme();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
     {
       question: 'What is web hosting?',
-      answer: 'Web hosting is a service that allows organizations and individuals to post a website or web page onto the Internet. A web host, or web hosting service provider, is a business that provides the technologies and services needed for the website or webpage to be viewed on the Internet.'
+      answer: 'Web hosting is a service that allows you to publish your website on the internet. When you purchase a hosting plan, you\'re essentially renting space on a server where your website files are stored and served to visitors.'
     },
     {
-      question: 'How do I transfer my website to NameHost?',
-      answer: 'We offer free website migration services. Our expert team will handle the entire process, ensuring zero downtime during the transfer. Simply contact our support team to initiate the migration process.'
+      question: 'How do I transfer my existing website?',
+      answer: 'We offer a free website migration service. Simply contact our support team, and they\'ll help you transfer your website files, databases, and configurations to our servers with minimal downtime.'
     },
     {
-      question: 'Do you offer a money-back guarantee?',
-      answer: 'Yes, we offer a 30-day money-back guarantee on all our hosting plans. If you\'re not satisfied with our services, you can request a full refund within the first 30 days of your purchase.'
+      question: 'What is the uptime guarantee?',
+      answer: 'We offer a 99.9% uptime guarantee. This means your website should be accessible 99.9% of the time throughout the year. If we fail to meet this guarantee, you\'ll receive compensation as per our service level agreement.'
     },
     {
-      question: 'What kind of support do you provide?',
-      answer: 'We provide 24/7 support through live chat, email, and phone. Our expert support team is always available to help you with any questions or issues you may have.'
+      question: 'Do you offer SSL certificates?',
+      answer: 'Yes, we provide free SSL certificates with all our hosting plans. This ensures your website is secure and visitors can access it via HTTPS. The SSL certificate is automatically installed and configured for you.'
+    },
+    {
+      question: 'What kind of support do you offer?',
+      answer: 'We provide 24/7 customer support through live chat, email, and phone. Our support team is highly trained and can help you with any hosting-related issues, from technical problems to billing questions.'
     }
   ];
 
   return (
-    <div className="py-20 bg-gray-50">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+    <section className="py-20 bg-[#0B2A97]">
+      <div className="max-w-7xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-xl text-white/80">
+            Find answers to common questions about our hosting services
+          </p>
+        </motion.div>
+
+        <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="rounded-lg overflow-hidden bg-[#1435AA]"
+            >
               <button
-                className="w-full px-6 py-4 flex justify-between items-center focus:outline-none"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-[#1B42C0] transition-colors duration-200"
               >
-                <span className="font-semibold text-left text-gray-900">{faq.question}</span>
-                {openIndex === index ? (
-                  <ChevronUp className="h-5 w-5 text-gray-500" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-gray-500" />
-                )}
+                <span className="text-lg font-semibold text-white">
+                  {faq.question}
+                </span>
+                <span className="text-2xl text-white">
+                  {openIndex === index ? '−' : '+'}
+                </span>
               </button>
               <AnimatePresence>
                 {openIndex === index && (
@@ -49,19 +75,17 @@ const FAQ = () => {
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
+                    className="px-6 pb-4 text-white/80"
                   >
-                    <div className="px-6 pb-4 text-gray-600">
-                      {faq.answer}
-                    </div>
+                    {faq.answer}
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

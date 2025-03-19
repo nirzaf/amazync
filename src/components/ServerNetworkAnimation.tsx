@@ -1,210 +1,174 @@
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
-const ServerNetworkAnimation = () => {
+interface Server {
+  id: number;
+  x: number;
+  y: number;
+}
+
+interface Connection {
+  from: number;
+  to: number;
+}
+
+interface DataPacket {
+  id: number;
+  fromX: number;
+  fromY: number;
+  toX: number;
+  toY: number;
+  color: string;
+  size: number;
+}
+
+const ServerNetworkAnimation: React.FC = () => {
+  const { colors } = useTheme();
+  const [dataPackets, setDataPackets] = useState<DataPacket[]>([]);
+  const [packetId, setPacketId] = useState(0);
+
   // Generate server positions in a network topology
-  const servers = [
-    { id: 1, x: '15%', y: '20%' },
-    { id: 2, x: '30%', y: '60%' },
-    { id: 3, x: '45%', y: '30%' },
-    { id: 4, x: '60%', y: '65%' },
-    { id: 5, x: '75%', y: '25%' },
-    { id: 6, x: '85%', y: '70%' },
+  const servers: Server[] = [
+    { id: 1, x: 20, y: 20 },
+    { id: 2, x: 80, y: 20 },
+    { id: 3, x: 20, y: 50 },
+    { id: 4, x: 80, y: 50 },
+    { id: 5, x: 20, y: 80 },
+    { id: 6, x: 80, y: 80 },
   ];
 
   // Define connections between servers
-  const connections = [
+  const connections: Connection[] = [
     { from: 1, to: 2 },
     { from: 1, to: 3 },
     { from: 2, to: 4 },
+    { from: 3, to: 4 },
     { from: 3, to: 5 },
-    { from: 4, to: 5 },
     { from: 4, to: 6 },
     { from: 5, to: 6 },
   ];
 
-  // State for data packets
-  const [dataPackets, setDataPackets] = useState<Array<{
-    id: number;
-    fromX: string;
-    fromY: string;
-    toX: string;
-    toY: string;
-    color: string;
-    size: number;
-    speed: number;
-  }>>([]);
-  
-  // Generate new data packet at random intervals
   useEffect(() => {
-    const generatePacket = () => {
+    const interval = setInterval(() => {
+      // Generate a new data packet
       const connection = connections[Math.floor(Math.random() * connections.length)];
-      const fromServer = servers.find(s => s.id === connection.from);
-      const toServer = servers.find(s => s.id === connection.to);
-      
-      const newPacket = {
-        id: Date.now(),
-        fromX: fromServer?.x || '0%',
-        fromY: fromServer?.y || '0%',
-        toX: toServer?.x || '0%',
-        toY: toServer?.y || '0%',
-        color: Math.random() > 0.5 ? '#4ADE80' : '#60A5FA',
-        size: Math.random() * 6 + 3, // Random size between 3 and 9
-        speed: Math.random() * 0.5 + 0.8, // Random speed between 0.8 and 1.3
+      const fromServer = servers.find(s => s.id === connection.from)!;
+      const toServer = servers.find(s => s.id === connection.to)!;
+
+      const newPacket: DataPacket = {
+        id: packetId,
+        fromX: fromServer.x,
+        fromY: fromServer.y,
+        toX: toServer.x,
+        toY: toServer.y,
+        color: Math.random() > 0.5 ? colors.chiliRed : colors.lavenderWeb,
+        size: Math.random() * 4 + 2, // Random size between 2 and 6 pixels
       };
-      
+
       setDataPackets(prev => [...prev, newPacket]);
-      
-      // Remove packet after animation completes
+      setPacketId(prev => prev + 1);
+
+      // Remove the packet after animation completes
       setTimeout(() => {
         setDataPackets(prev => prev.filter(p => p.id !== newPacket.id));
-      }, 1500);
-    };
-    
-    const interval = setInterval(() => {
-      generatePacket();
-    }, 600); // Increased frequency
-    
+      }, 2000);
+    }, 800); // Increased frequency of data packets
+
     return () => clearInterval(interval);
-  }, []);
+  }, [packetId]);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none bg-[#0A2FB6]">
-      {/* Server Network Container */}
-      <div className="absolute inset-0">
-        {/* Servers */}
-        {servers.map(server => (
-          <div 
-            key={server.id}
-            className="absolute w-20 h-24 transform -translate-x-10 -translate-y-12"
-            style={{ left: server.x, top: server.y }}
-          >
-            <motion.div 
-              className="w-full h-full bg-white/95 backdrop-blur-sm rounded-md border-2 border-white flex flex-col items-center justify-center shadow-[0_0_50px_rgba(255,255,255,0.5)]"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: server.id * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-            >
-              {/* Server lights */}
-              <div className="flex gap-2 mb-3">
-                <motion.div 
-                  className="w-3 h-3 rounded-full bg-green-400"
-                  animate={{
-                    scale: [0.8, 1.2, 0.8],
-                    opacity: [0.9, 1, 0.9]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-                <motion.div 
-                  className="w-3 h-3 rounded-full bg-blue-400"
-                  animate={{
-                    scale: [0.8, 1.2, 0.8],
-                    opacity: [0.9, 1, 0.9]
-                  }}
-                  transition={{
-                    duration: 2,
-                    delay: 1,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-              </div>
-              {/* Server slots */}
-              <div className="w-12 h-2 bg-white/90 rounded-sm mb-2"></div>
-              <div className="w-12 h-2 bg-white/90 rounded-sm mb-2"></div>
-              <div className="w-12 h-2 bg-white/90 rounded-sm"></div>
-            </motion.div>
-          </div>
-        ))}
-        
+    <div className="w-full h-full relative">
+      <svg width="100%" height="100%" className="absolute inset-0">
         {/* Connection lines */}
-        <svg className="absolute inset-0 w-full h-full">
-          {connections.map(connection => {
-            const fromServer = servers.find(s => s.id === connection.from);
-            const toServer = servers.find(s => s.id === connection.to);
-            
-            const parsePercentage = (value: string) => {
-              return parseFloat(value) / 100;
-            };
-            
-            const fromXPercent = parsePercentage(fromServer?.x || '0%');
-            const fromYPercent = parsePercentage(fromServer?.y || '0%');
-            const toXPercent = parsePercentage(toServer?.x || '0%');
-            const toYPercent = parsePercentage(toServer?.y || '0%');
-            
-            return (
-              <motion.line
-                key={`${connection.from}-${connection.to}`}
-                x1={`${fromXPercent * 100}%`}
-                y1={`${fromYPercent * 100}%`}
-                x2={`${toXPercent * 100}%`}
-                y2={`${toYPercent * 100}%`}
-                stroke="rgba(255, 255, 255, 0.95)"
-                strokeWidth="3"
-                strokeDasharray="6 6"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 1.5, delay: (connection.from + connection.to) * 0.1 }}
-              />
-            );
-          })}
-        </svg>
-        
-        {/* Data packets */}
-        {dataPackets.map(packet => (
-          <motion.div
-            key={packet.id}
-            className="absolute rounded-full"
-            style={{ 
-              zIndex: 2,
-              width: `${packet.size * 1.5}px`,
-              height: `${packet.size * 1.5}px`,
-              backgroundColor: packet.color,
-              boxShadow: `0 0 60px ${packet.color}`,
-              left: packet.fromX,
-              top: packet.fromY
-            }}
-            animate={{
-              left: packet.toX,
-              top: packet.toY,
-              scale: [1, 1.8, 1],
-              opacity: [0.95, 1, 0.95]
-            }}
-            transition={{
-              duration: 1.5 * packet.speed,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
+        {connections.map(({ from, to }) => {
+          const fromServer = servers.find(s => s.id === from)!;
+          const toServer = servers.find(s => s.id === to)!;
+          return (
+            <line
+              key={`${from}-${to}`}
+              x1={`${fromServer.x}%`}
+              y1={`${fromServer.y}%`}
+              x2={`${toServer.x}%`}
+              y2={`${toServer.y}%`}
+              stroke={`${colors.lavenderWeb}`}
+              strokeWidth="2"
+              strokeOpacity="0.9"
+              strokeDasharray="4 4"
+            />
+          );
+        })}
 
-        {/* Glow effects */}
-        {servers.map(server => (
-          <motion.div
-            key={`glow-${server.id}`}
-            className="absolute w-64 h-64 rounded-full"
-            style={{
-              left: `calc(${server.x} - 5rem)`,
-              top: `calc(${server.y} - 5rem)`,
-              background: 'radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%)',
-              zIndex: 0
-            }}
+        {/* Data packets */}
+        {dataPackets.map((packet) => (
+          <motion.circle
+            key={packet.id}
+            cx={`${packet.fromX}%`}
+            cy={`${packet.fromY}%`}
+            r={packet.size}
+            fill={packet.color}
+            initial={{ opacity: 0.8 }}
             animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.6, 0.8, 0.6]
+              cx: [`${packet.fromX}%`, `${packet.toX}%`],
+              cy: [`${packet.fromY}%`, `${packet.toY}%`],
+              opacity: [0.8, 0]
             }}
             transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
+              duration: 2,
+              ease: "linear"
+            }}
+            style={{
+              filter: 'drop-shadow(0 0 20px currentColor)'
             }}
           />
         ))}
-      </div>
+      </svg>
+
+      {/* Servers */}
+      {servers.map((server) => (
+        <div
+          key={server.id}
+          className="absolute transform -translate-x-1/2 -translate-y-1/2 group"
+          style={{
+            left: `${server.x}%`,
+            top: `${server.y}%`,
+          }}
+        >
+          {/* Server container */}
+          <div 
+            className={`w-12 h-12 rounded-lg relative transition-transform transform group-hover:scale-110`}
+            style={{
+              background: `${colors.persianBlue}`,
+              opacity: 0.8,
+              border: `2px solid ${colors.lavenderWeb}90`,
+              boxShadow: `0 0 20px ${colors.lavenderWeb}`,
+            }}
+          >
+            {/* Server lights */}
+            <div className="absolute top-2 right-2 w-2 h-2 rounded-full animate-pulse"
+              style={{ 
+                backgroundColor: colors.chiliRed,
+                boxShadow: `0 0 10px ${colors.chiliRed}`,
+              }} 
+            />
+            
+            {/* Server slots */}
+            <div className="absolute bottom-2 left-2 right-2 flex space-x-1">
+              {[...Array(3)].map((_, i) => (
+                <div
+                  key={i}
+                  className="flex-1 h-1 rounded-full"
+                  style={{
+                    backgroundColor: colors.lavenderWeb,
+                    opacity: 0.7
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

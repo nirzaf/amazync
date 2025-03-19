@@ -1,65 +1,82 @@
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 const Testimonials = () => {
+  const { colors, gradients } = useTheme();
+
   const testimonials = [
     {
       name: 'Sarah Johnson',
-      role: 'Small Business Owner',
-      rating: 5,
-      text: 'Switching to NameHost was the best decision for my business. The speed and reliability are outstanding!'
+      role: 'Web Developer',
+      company: 'TechStart Inc.',
+      content: 'The hosting service is exceptional! The speed and reliability have exceeded my expectations. The support team is always ready to help.',
+      rating: 5
     },
     {
       name: 'Michael Chen',
-      role: 'Web Developer',
-      rating: 5,
-      text: 'As a developer, I appreciate the robust features and excellent support. Highly recommended!'
+      role: 'E-commerce Owner',
+      company: 'ShopSmart',
+      content: 'I\'ve been using their hosting for my online store for over a year. The uptime is incredible, and the SSL certificate setup was seamless.',
+      rating: 5
     },
     {
-      name: 'Emily Rodriguez',
-      role: 'E-commerce Manager',
-      rating: 5,
-      text: 'Our online store has never performed better. The customer support team is always there when we need them.'
+      name: 'Emma Davis',
+      role: 'Digital Marketing Agency',
+      company: 'GrowthPro',
+      content: 'The performance optimization tools are fantastic. My clients\' websites load instantly, which has significantly improved their conversion rates.',
+      rating: 5
     }
   ];
 
   return (
-    <div className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900">NameHost Customer Reviews</h2>
-          <div className="flex justify-center items-center mt-4">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-6 w-6 text-yellow-400 fill-current" />
-            ))}
-            <span className="ml-2 text-lg text-gray-600">4.9 out of 5 based on 10,000+ reviews</span>
-          </div>
-        </div>
+    <section className="py-20 bg-[#DBD9EC]">
+      <div className="max-w-7xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-[#192C99] mb-4">
+            What Our Customers Say
+          </h2>
+          <p className="text-xl text-[#192C99]/80">
+            Join thousands of satisfied customers who trust us with their hosting needs
+          </p>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
-              key={index}
+              key={testimonial.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-white p-6 rounded-lg shadow-lg"
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm shadow-lg"
             >
-              <div className="flex items-center mb-4">
+              <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  <span key={i} className="text-yellow-500">★</span>
                 ))}
               </div>
-              <p className="text-gray-600 mb-4">{testimonial.text}</p>
+              <p className="text-gray-700 mb-6 italic text-lg">
+                "{testimonial.content}"
+              </p>
               <div>
-                <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                <p className="text-gray-500">{testimonial.role}</p>
+                <h4 className="text-lg font-bold text-gray-900">
+                  {testimonial.name}
+                </h4>
+                <p className="text-gray-600">
+                  {testimonial.role} at {testimonial.company}
+                </p>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

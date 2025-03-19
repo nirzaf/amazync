@@ -1,73 +1,97 @@
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const { colors, gradients } = useTheme();
+
+  const footerLinks = {
+    hosting: [
+      'Web Hosting',
+      'WordPress Hosting',
+      'VPS Hosting',
+      'Dedicated Servers',
+      'Cloud Hosting'
+    ],
+    domains: [
+      'Domain Names',
+      'Domain Transfer',
+      'Domain Privacy',
+      'WHOIS Lookup',
+      'Domain Auctions'
+    ],
+    support: [
+      'Contact Us',
+      'Knowledge Base',
+      'Community Forums',
+      'Status Page',
+      'Submit a Ticket'
+    ],
+    company: [
+      'About Us',
+      'Blog',
+      'Careers',
+      'Press',
+      'Partners'
+    ]
+  };
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-2">
-            <h2 className="text-2xl font-bold mb-4">NameHost</h2>
-            <p className="text-gray-400 mb-4">
-              Providing reliable hosting solutions since 2010. Your success is our priority.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Facebook className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Instagram className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Linkedin className="h-6 w-6" />
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Hosting</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white">Web Hosting</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">WordPress Hosting</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">VPS Hosting</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Dedicated Servers</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Contact</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Careers</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Blog</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Support</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white">Help Center</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Knowledge Base</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">API Documentation</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Status</a></li>
-            </ul>
-          </div>
+    <footer className="bg-[#0B2A97] text-white border-t border-[#1435AA]">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {Object.entries(footerLinks).map(([category, links], index) => (
+            <motion.div
+              key={category}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-lg font-bold mb-4 capitalize">
+                {category}
+              </h3>
+              <ul className="space-y-2">
+                {links.map((link) => (
+                  <li key={link}>
+                    <a
+                      href="#"
+                      className="text-white/80 hover:text-[#FF6B2C] transition-colors duration-200"
+                    >
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8">
+        <div className="mt-12 pt-8 border-t border-[#1435AA]">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © {currentYear} NameHost. All rights reserved.
-            </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+            <div className="mb-4 md:mb-0">
+              <p className="text-white/60">
+                © 2024 NameHost. All rights reserved.
+              </p>
+            </div>
+            <div className="flex space-x-6">
+              <a
+                href="#"
+                className="text-white/80 hover:text-[#FF6B2C] transition-colors duration-200"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="#"
+                className="text-white/80 hover:text-[#FF6B2C] transition-colors duration-200"
+              >
+                Terms of Service
+              </a>
+              <a
+                href="#"
+                className="text-white/80 hover:text-[#FF6B2C] transition-colors duration-200"
+              >
+                Cookie Policy
+              </a>
             </div>
           </div>
         </div>

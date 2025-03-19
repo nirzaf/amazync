@@ -1,34 +1,42 @@
-import React from 'react';
+import { ButtonHTMLAttributes } from 'react';
+import { useTheme } from '../context/ThemeContext';
+import clsx from 'clsx';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline';
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary';
   size?: 'sm' | 'md' | 'lg';
 }
 
-const Button: React.FC<ButtonProps> = ({
-  children,
-  variant = 'primary',
-  size = 'md',
-  className = '',
-  ...props
-}) => {
-  const baseStyles = 'font-semibold rounded-lg transition-all duration-200';
-  
-  const variants = {
-    primary: 'bg-blue-600 text-white hover:bg-blue-700',
-    secondary: 'bg-gray-200 text-gray-800 hover:bg-gray-300',
-    outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50'
+const Button = ({ 
+  variant = 'primary', 
+  size = 'md', 
+  className, 
+  children, 
+  ...props 
+}: ButtonProps) => {
+  const { colors } = useTheme();
+
+  const baseClasses = "font-semibold rounded-full transition-all duration-200 ease-in-out transform hover:scale-105 [text-shadow:_0_1px_1px_rgba(0,0,0,0.3)] shadow-lg";
+
+  const variantClasses = {
+    primary: `bg-[${colors.chiliRed}] hover:bg-[${colors.chiliRedHover}] text-white`,
+    secondary: `bg-[${colors.glaucous}]/30 hover:bg-[${colors.glaucous}]/40 text-[${colors.lavenderWeb}] backdrop-blur-sm border border-[${colors.lavenderWeb}]/20`,
   };
 
-  const sizes = {
+  const sizeClasses = {
     sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg'
+    md: 'px-6 py-2.5 text-base',
+    lg: 'px-12 py-4 text-xl',
   };
 
   return (
     <button
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
+      className={clsx(
+        baseClasses,
+        variantClasses[variant],
+        sizeClasses[size],
+        className
+      )}
       {...props}
     >
       {children}
