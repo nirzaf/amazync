@@ -28,7 +28,7 @@ const HeroSection = () => {
             transition={{ delay: 0.2 }}
             className="flex items-center gap-4"
           >
-            <Button variant="primary" size="sm" className="bg-[#FF6B00] hover:bg-[#FF8533]">
+            <Button variant="primary" size="sm" className="bg-[#FF6B00] hover:bg-[#FF8533] [text-shadow:_0_1px_1px_rgba(0,0,0,0.3)]">
               Buy Now!
             </Button>
             <button className="text-white hover:text-gray-200">×</button>
@@ -99,8 +99,9 @@ const HeroSection = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="inline-block mb-6"
               >
-                <span className="bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">
-                  🎉 Limited Time Offer
+                <span className="bg-white/25 backdrop-blur-md text-white px-6 py-2.5 rounded-full text-sm font-semibold border border-white/20 shadow-lg [text-shadow:_1px_1px_0_rgba(0,0,0,0.3)] flex items-center gap-2 justify-center">
+                  <span className="text-lg">🎉</span>
+                  <span>Limited Time Offer</span>
                 </span>
               </motion.div>
 
@@ -108,11 +109,11 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-6xl md:text-7xl font-bold text-white mb-6 relative drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+                className="text-6xl md:text-7xl font-bold text-white mb-6 relative [text-shadow:_1px_1px_0_rgba(0,0,0,0.5),_-1px_-1px_0_rgba(0,0,0,0.5),_1px_-1px_0_rgba(0,0,0,0.5),_-1px_1px_0_rgba(0,0,0,0.5)]"
               >
                 Fast Hosting & Domains
                 <br />
-                <span className="bg-gradient-to-r from-[#FF6B00] to-[#FF8533] text-transparent bg-clip-text">
+                <span className="text-[#FF6B00]">
                   Made Easy
                 </span>
               </motion.h1>
@@ -121,10 +122,10 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="text-2xl md:text-3xl text-gray-200 mb-12 relative drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+                className="text-2xl md:text-3xl text-gray-200 mb-12 relative [text-shadow:_1px_1px_0_rgba(0,0,0,0.5),_-1px_-1px_0_rgba(0,0,0,0.5),_1px_-1px_0_rgba(0,0,0,0.5),_-1px_1px_0_rgba(0,0,0,0.5)]"
               >
                 2025 Spring Savings Event: 
-                <span className="text-[#FF6B00] font-bold"> Up to 70% Off!</span>
+                <span className="text-[#FF6B00] font-bold [text-shadow:_1px_1px_0_rgba(0,0,0,0.5),_-1px_-1px_0_rgba(0,0,0,0.5),_1px_-1px_0_rgba(0,0,0,0.5),_-1px_1px_0_rgba(0,0,0,0.5)]"> Up to 70% Off!</span>
               </motion.p>
 
               <motion.div 
@@ -136,14 +137,14 @@ const HeroSection = () => {
                 <Button 
                   variant="primary" 
                   size="lg" 
-                  className="bg-[#FF6B00] hover:bg-[#FF8533] text-xl px-12 py-4 rounded-full transform hover:scale-105 transition-transform"
+                  className="bg-[#FF6B00] hover:bg-[#FF8533] text-xl px-12 py-4 rounded-full transform hover:scale-105 transition-transform [text-shadow:_0_1px_1px_rgba(0,0,0,0.3)] shadow-lg"
                 >
                   Get Started Now
                 </Button>
                 <Button 
                   variant="secondary" 
                   size="lg" 
-                  className="bg-white/10 hover:bg-white/20 text-white text-xl px-12 py-4 rounded-full backdrop-blur-sm transform hover:scale-105 transition-transform"
+                  className="bg-white/20 hover:bg-white/30 text-white text-xl px-12 py-4 rounded-full backdrop-blur-sm transform hover:scale-105 transition-transform [text-shadow:_0_1px_1px_rgba(0,0,0,0.3)] shadow-lg"
                 >
                   Learn More
                 </Button>
