@@ -59,6 +59,8 @@ const ServerNetworkAnimation = () => {
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
+      {/* Semi-transparent overlay to improve text visibility */}
+      <div className="absolute inset-0 bg-[#0A2FB6]/30 z-10"></div>
       {/* Servers */}
       {servers.map(server => (
         <div 
@@ -67,7 +69,7 @@ const ServerNetworkAnimation = () => {
           style={{ left: server.x, top: server.y }}
         >
           <motion.div 
-            className="w-full h-full bg-white/20 backdrop-blur-sm rounded-md border border-white/30 flex flex-col items-center justify-center shadow-lg shadow-white/10"
+            className="w-full h-full bg-white/30 backdrop-blur-sm rounded-md border border-white/40 flex flex-col items-center justify-center shadow-lg shadow-white/20"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: server.id * 0.1 }}
@@ -109,7 +111,7 @@ const ServerNetworkAnimation = () => {
       ))}
       
       {/* Connection lines */}
-      <svg className="absolute inset-0 w-full h-full">
+      <svg className="absolute inset-0 w-full h-full z-0">
         {connections.map(connection => {
           const fromServer = servers.find(s => s.id === connection.from);
           const toServer = servers.find(s => s.id === connection.to);
@@ -132,7 +134,7 @@ const ServerNetworkAnimation = () => {
               y1={`${fromYPercent * 100}%`}
               x2={`${toXPercent * 100}%`}
               y2={`${toYPercent * 100}%`}
-              stroke="rgba(255, 255, 255, 0.25)"
+              stroke="rgba(255, 255, 255, 0.35)"
               strokeWidth="1"
               strokeDasharray="4 4"
               initial={{ pathLength: 0 }}

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import Button from './Button';
-import { useEffect, useState } from 'react';
 import ServerNetworkAnimation from './ServerNetworkAnimation';
 
 const HeroSection = () => {
@@ -51,7 +50,7 @@ const HeroSection = () => {
       {/* Hero Section */}
       <div className="bg-[#0A2FB6] min-h-[600px] relative overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072')] opacity-5"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A2FB6] to-[#0A2FB6]/90"></div>
         </div>
@@ -64,7 +63,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-center relative z-20"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Fast Hosting & Domains Made Easy
