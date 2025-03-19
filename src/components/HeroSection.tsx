@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Button from './Button';
-import { Search } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import ServerNetworkAnimation from './ServerNetworkAnimation';
 
 const HeroSection = () => {
   return (
@@ -57,7 +57,7 @@ const HeroSection = () => {
         </div>
         
         {/* Server Network Animation */}
-{/* Server Network Animation Component would go here - needs to be imported or created */}
+<ServerNetworkAnimation />
 
         <div className="max-w-7xl mx-auto px-4 pt-32 pb-20 relative">
           <motion.div
