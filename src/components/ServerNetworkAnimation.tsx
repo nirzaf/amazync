@@ -24,7 +24,14 @@ const ServerNetworkAnimation = () => {
   ];
 
   // State for data packets
-  const [dataPackets, setDataPackets] = useState([]);
+  const [dataPackets, setDataPackets] = useState<Array<{
+    id: number;
+    fromX: string;
+    fromY: string;
+    toX: string;
+    toY: string;
+    color: string;
+  }>>([]);
   
   // Generate new data packet at random intervals
   useEffect(() => {
@@ -58,9 +65,11 @@ const ServerNetworkAnimation = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 1 }}>
       {/* Semi-transparent overlay to improve text visibility */}
-      <div className="absolute inset-0 bg-[#0A2FB6]/30 z-10"></div>
+      <div className="absolute inset-0 bg-[#0A2FB6]/10" style={{ zIndex: 1 }}></div>
+      {/* Server Network Container */}
+      <div className="absolute inset-0" style={{ zIndex: 1 }}>
       {/* Servers */}
       {servers.map(server => (
         <div 
@@ -117,15 +126,15 @@ const ServerNetworkAnimation = () => {
           const toServer = servers.find(s => s.id === connection.to);
           
           // Parse percentage values to calculate actual positions
-          const parsePercentage = (value) => {
+          const parsePercentage = (value: string) => {
             return parseFloat(value) / 100;
           };
           
           // Calculate positions (adding offset to center of server)
-          const fromXPercent = parsePercentage(fromServer.x);
-          const fromYPercent = parsePercentage(fromServer.y);
-          const toXPercent = parsePercentage(toServer.x);
-          const toYPercent = parsePercentage(toServer.y);
+          const fromXPercent = parsePercentage(fromServer?.x || '0%');
+          const fromYPercent = parsePercentage(fromServer?.y || '0%');
+          const toXPercent = parsePercentage(toServer?.x || '0%');
+          const toYPercent = parsePercentage(toServer?.y || '0%');
           
           return (
             <motion.line
@@ -149,8 +158,9 @@ const ServerNetworkAnimation = () => {
       {dataPackets.map(packet => (
         <motion.div
           key={packet.id}
-          className="absolute w-3 h-3 rounded-full z-20 blur-[2px]"
+          className="absolute w-3 h-3 rounded-full blur-[2px]"
           style={{ 
+            zIndex: 1,
             backgroundColor: packet.color,
             boxShadow: `0 0 8px ${packet.color}`,
             left: packet.fromX,
@@ -168,6 +178,7 @@ const ServerNetworkAnimation = () => {
           }}
         />
       ))}
+      </div>
     </div>
   );
 };

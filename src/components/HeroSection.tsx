@@ -49,39 +49,40 @@ const HeroSection = () => {
 
       {/* Hero Section */}
       <div className="bg-[#0A2FB6] min-h-[600px] relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 z-0">
+        {/* Background Pattern and Animation Layer */}
+        <div className="absolute inset-0" style={{ zIndex: 1 }}>
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072')] opacity-5"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A2FB6] to-[#0A2FB6]/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A2FB6]/80 to-[#0A2FB6]/70"></div>
+          <ServerNetworkAnimation />
         </div>
         
-        {/* Server Network Animation */}
-<ServerNetworkAnimation />
+        {/* Content Layer - Positioned Above Animation */}
+        <div className="relative w-full h-full" style={{ zIndex: 10 }}>
+          <div className="max-w-7xl mx-auto px-4 pt-32 pb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                Fast Hosting & Domains Made Easy
+              </h1>
+              <p className="text-2xl text-gray-200 mb-8">
+                2025 Spring Savings Event: Up to 70% Off!
+              </p>
 
-        <div className="max-w-7xl mx-auto px-4 pt-32 pb-20 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center relative z-20"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Fast Hosting & Domains Made Easy
-            </h1>
-            <p className="text-2xl text-gray-200 mb-8">
-              2025 Spring Savings Event: Up to 70% Off!
-            </p>
-
-            <div className="max-w-xl mx-auto">
-              <Button 
-                variant="primary" 
-                size="lg" 
-                className="bg-[#FF6B00] hover:bg-[#FF8533] text-xl px-12"
-              >
-                Get Started Now
-              </Button>
-            </div>
-          </motion.div>
+              <div className="max-w-xl mx-auto">
+                <Button 
+                  variant="primary" 
+                  size="lg" 
+                  className="bg-[#FF6B00] hover:bg-[#FF8533] text-xl px-12"
+                >
+                  Get Started Now
+                </Button>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </>
