@@ -81,7 +81,7 @@ const HeroSection = () => {
       </motion.div>
 
       {/* Hero Section */}
-      <div className={`min-h-[700px] relative overflow-hidden ${gradients.secondary}`}>
+      <div className="min-h-[700px] relative overflow-hidden bg-[#0B2A97]">
         {/* Background Pattern and Animation Layer */}
         <div className="absolute inset-0">
           <ServerNetworkAnimation />
@@ -114,7 +114,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className={`text-6xl md:text-7xl font-bold text-[${colors.lavenderWeb}] mb-6 relative [text-shadow:_1px_1px_0_rgba(0,0,0,0.5)]`}
+                className="text-6xl md:text-7xl font-bold text-white mb-6 relative [text-shadow:_1px_1px_0_rgba(0,0,0,0.5)]"
               >
                 Fast Hosting & Domains
                 <br />
@@ -128,7 +128,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className={`text-2xl md:text-3xl text-[${colors.lavenderWeb}] mb-12 relative [text-shadow:_1px_1px_0_rgba(0,0,0,0.5)]`}
+                className="text-2xl md:text-3xl text-white mb-12 relative [text-shadow:_1px_1px_0_rgba(0,0,0,0.5)]"
               >
                 2025 Spring Savings Event: 
                 <span className={`text-[${colors.chiliRed}] font-bold`}> Up to 70% Off!</span>
