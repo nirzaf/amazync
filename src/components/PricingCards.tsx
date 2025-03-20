@@ -2,6 +2,14 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Button from './Button';
 
+type Plan = {
+  name: string;
+  price: string;
+  period?: string;
+  features: { label: string; value: string | boolean }[];
+  popular?: boolean;
+};
+
 const PricingCards = () => {
   const [activeTab, setActiveTab] = useState('shared');
 
@@ -33,7 +41,7 @@ const PricingCards = () => {
     }
   ];
 
-  const allPlans = {
+  const allPlans: Record<string, Plan[]> = {
     shared: [
       {
         name: 'Business',
@@ -407,7 +415,7 @@ const PricingCards = () => {
 
       {/* Pricing Cards */}
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
           {allPlans[activeTab]?.map((plan, index) => (
             <motion.div
               key={plan.name}

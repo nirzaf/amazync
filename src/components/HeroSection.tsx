@@ -103,7 +103,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="inline-block mb-6"
               >
-                <span className={`bg-[${colors.glaucous}]/40 backdrop-blur-md text-[${colors.lavenderWeb}] px-6 py-2.5 rounded-full text-sm font-semibold border border-[${colors.lavenderWeb}]/20 shadow-lg [text-shadow:_1px_1px_0_rgba(0,0,0,0.3)] flex items-center gap-2 justify-center`}>
+                <span className="bg-[${colors.glaucous}]/40 backdrop-blur-md text-white px-6 py-2.5 rounded-full text-sm font-semibold border border-[${colors.lavenderWeb}]/20 shadow-lg [text-shadow:_1px_1px_0_rgba(0,0,0,0.3)] flex items-center gap-2 justify-center">
                   <span className="text-lg">🎉</span>
                   <span>Limited Time Offer</span>
                 </span>
@@ -158,8 +158,8 @@ const HeroSection = () => {
               >
                 {['99.9% Uptime', '24/7 Support', 'Free SSL', 'Money Back Guarantee'].map((feature) => (
                   <div key={feature} className="flex items-center gap-2 group">
-                    <span className={`text-[${colors.chiliRed}] group-hover:scale-110 transition-transform`}>✓</span>
-                    <span className="group-hover:text-white transition-colors">{feature}</span>
+                    <span className="text-green-500 group-hover:scale-110 transition-transform glow">✓</span>
+                    <span className="text-green-500 group-hover:text-white transition-colors glow">{feature}</span>
                   </div>
                 ))}
               </motion.div>
