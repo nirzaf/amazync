@@ -141,7 +141,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="max-w-xl mx-auto relative flex flex-col sm:flex-row gap-4 justify-center"
               >
-                <Button variant="primary" size="lg" className={`bg-[${colors.persianBlue}] hover:bg-[${colors.internationalKleinBlue}] text-white`}>
+                <Button variant="primary" size="lg" className="bg-[#EC3A1C] hover:bg-[#7882B6] text-white">
                   Get Started Now
                 </Button>
                 <Button variant="secondary" size="lg" className={`bg-[${colors.chiliRed}] hover:bg-[${colors.glaucous}] text-white`}>
