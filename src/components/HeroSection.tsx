@@ -158,9 +158,9 @@ const HeroSection = () => {
               >
                 {['99.9% Uptime', '24/7 Support', 'Free SSL', 'Money Back Guarantee'].map((feature) => (
                   <div key={feature} className="flex items-center gap-2 group">
-                    <div className="flex items-center justify-center bg-gradient-to-r from-[#1934B6] to-[#192C99] rounded-full p-4">
-                      <span className="text-green-500 group-hover:scale-110 transition-transform glow">✓</span>
-                      <span className="text-green-500 group-hover:text-white transition-colors glow ml-2">{feature}</span>
+                    <div className="flex items-center justify-center bg-gradient-to-r from-[#2A45C7]/80 to-[#3B5CE9]/80 backdrop-blur-md rounded-full p-4 shadow-lg border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,92,233,0.5)] transform hover:-translate-y-1">
+                      <span className="text-[#4AFF91] font-bold group-hover:scale-110 transition-transform drop-shadow-[0_0_3px_rgba(74,255,145,0.7)]">✓</span>
+                      <span className="text-white font-medium group-hover:text-[#4AFF91] transition-colors drop-shadow-[0_0_2px_rgba(255,255,255,0.5)] ml-2">{feature}</span>
                     </div>
                   </div>
                 ))}
