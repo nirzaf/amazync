@@ -4,7 +4,7 @@ import ServerNetworkAnimation from './ServerNetworkAnimation';
 import { useTheme } from '../context/ThemeContext';
 
 const HeroSection = () => {
-  const { colors, gradients } = useTheme();
+  const { colors } = useTheme();
 
   return (
     <>
@@ -51,7 +51,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="flex items-center space-x-8"
+            className="flex items-center space-x-4 md:space-x-8"
           >
             <div className="flex items-center gap-2 hover:text-white transition-all duration-300 cursor-pointer group">
               <span className="text-blue-300 group-hover:text-white transition-all duration-300 transform group-hover:scale-110">💬</span>
@@ -59,11 +59,11 @@ const HeroSection = () => {
             </div>
             <div className={`flex items-center gap-2 hover:text-[${colors.lavenderWeb}] transition-colors cursor-pointer group`}>
               <span className={`text-[${colors.glaucous}] group-hover:text-[${colors.lavenderWeb}] transition-colors`}>❓</span>
-              <span>Help Center</span>
+              <span className="hidden md:inline">Help Center</span>
             </div>
             <div className={`flex items-center gap-2 hover:text-[${colors.lavenderWeb}] transition-colors cursor-pointer group`}>
               <span className={`text-[${colors.glaucous}] group-hover:text-[${colors.lavenderWeb}] transition-colors`}>📞</span>
-              <span>1-855-984-6263</span>
+              <span className="hidden md:inline">1-855-984-6263</span>
             </div>
           </motion.div>
           <motion.div 
@@ -74,7 +74,7 @@ const HeroSection = () => {
           >
             <div className={`flex items-center gap-2 hover:text-[${colors.lavenderWeb}] transition-colors cursor-pointer group`}>
               <span className={`text-[${colors.glaucous}] group-hover:text-[${colors.lavenderWeb}] transition-colors`}>🛒</span>
-              <span>Cart</span>
+              <span className="hidden md:inline">Cart</span>
             </div>
           </motion.div>
         </div>
