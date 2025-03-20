@@ -1,11 +1,11 @@
 import { createContext, useContext, ReactNode } from 'react';
 
 export const themeColors = {
-  glaucous: '#7882B6',
-  lavenderWeb: '#DBD9EC',
-  persianBlue: '#1934B6',
-  internationalKleinBlue: '#192C99',
-  chiliRed: '#EC3A1C',
+  glaucous: '#7882B6ff',
+  lavenderWeb: '#DBD9ECff',
+  persianBlue: '#1934B6ff',
+  internationalKleinBlue: '#192C99ff',
+  chiliRed: '#EC3A1Cff',
   // Derived colors
   chiliRedHover: '#ff4d2e',
   glaucousTransparent: 'rgba(120, 130, 182, 0.3)',
@@ -13,8 +13,8 @@ export const themeColors = {
 } as const;
 
 export const gradients = {
-  primary: 'bg-gradient-to-r from-[#192C99] via-[#1934B6] to-[#7882B6]',
-  secondary: 'bg-gradient-to-br from-[#192C99] via-[#1934B6] to-[#7882B6]',
+  primary: 'bg-gradient-to-r from-[#192C99ff] via-[#1934B6ff] to-[#7882B6ff]',
+  secondary: 'bg-gradient-to-br from-[#192C99ff] via-[#1934B6ff] to-[#7882B6ff]',
 } as const;
 
 type ThemeContextType = {

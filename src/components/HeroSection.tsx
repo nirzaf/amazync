@@ -118,7 +118,7 @@ const HeroSection = () => {
               >
                 Fast Hosting & Domains
                 <br />
-                <span className={`text-[${colors.chiliRed}] font-extrabold`}>
+                <span className="text-[#EC3A1C] font-extrabold">
                   Made Easy
                 </span>
               </motion.h1>
@@ -141,10 +141,10 @@ const HeroSection = () => {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="max-w-xl mx-auto relative flex flex-col sm:flex-row gap-4 justify-center"
               >
-                <Button variant="primary" size="lg">
+                <Button variant="primary" size="lg" className={`bg-[${colors.persianBlue}] hover:bg-[${colors.internationalKleinBlue}] text-white`}>
                   Get Started Now
                 </Button>
-                <Button variant="secondary" size="lg">
+                <Button variant="secondary" size="lg" className={`bg-[${colors.chiliRed}] hover:bg-[${colors.glaucous}] text-white`}>
                   Learn More
                 </Button>
               </motion.div>
