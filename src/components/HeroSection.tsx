@@ -13,7 +13,7 @@ const HeroSection = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`${gradients.primary} text-white py-2 px-4 relative shadow-lg`}
+        className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 px-4 relative shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <motion.div 
@@ -44,7 +44,7 @@ const HeroSection = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className={`bg-[${colors.persianBlue}] text-white py-3 shadow-md`}
+        className="bg-[#1934B6]/90 backdrop-blur-sm text-white py-3 shadow-md"
       >
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <motion.div 
@@ -53,8 +53,8 @@ const HeroSection = () => {
             transition={{ delay: 0.3 }}
             className="flex items-center space-x-8"
           >
-            <div className={`flex items-center gap-2 hover:text-[${colors.lavenderWeb}] transition-colors cursor-pointer group`}>
-              <span className={`text-[${colors.glaucous}] group-hover:text-[${colors.lavenderWeb}] transition-colors`}>💬</span>
+            <div className="flex items-center gap-2 hover:text-white transition-all duration-300 cursor-pointer group">
+              <span className="text-blue-300 group-hover:text-white transition-all duration-300 transform group-hover:scale-110">💬</span>
               <span>Live Chat</span>
             </div>
             <div className={`flex items-center gap-2 hover:text-[${colors.lavenderWeb}] transition-colors cursor-pointer group`}>
