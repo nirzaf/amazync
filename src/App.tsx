@@ -1,6 +1,7 @@
 import { ThemeProvider } from './context/ThemeContext';
 import HeroSection from './components/HeroSection';
 import PricingCards from './components/PricingCards';
+import IntegrationSection from './components/IntegrationSection';
 import Features from './components/Features';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
@@ -12,6 +13,7 @@ function App() {
       <div className="min-h-screen bg-[#0B2A97]">
         <HeroSection />
         <PricingCards />
+        <IntegrationSection />
         <Features />
         <Testimonials />
         <FAQ />
