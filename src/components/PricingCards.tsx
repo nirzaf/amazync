@@ -400,7 +400,7 @@ const PricingCards = () => {
             <button
               key={type.id}
               onClick={() => setActiveTab(type.id)}
-              className={`flex-shrink-0 flex flex-col items-center px-6 py-4 rounded-lg transition-all transform hover:scale-105 ${
+              className={`w-[200px] flex-shrink-0 flex flex-col items-center px-6 py-4 rounded-lg transition-all transform hover:scale-105 ${
                 activeTab === type.id
                   ? 'bg-[#0037C1] text-white shadow-lg'
                   : 'bg-white text-gray-600 hover:bg-gray-50'
@@ -415,7 +415,7 @@ const PricingCards = () => {
 
       {/* Pricing Cards */}
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12 justify-items-center">
           {allPlans[activeTab]?.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -425,7 +425,7 @@ const PricingCards = () => {
               viewport={{ once: true }}
               className={`relative bg-white rounded-lg border-2 ${
                 plan.popular ? 'border-[#0037C1]' : 'border-gray-100'
-              } shadow-lg p-6 hover:shadow-xl transition-shadow`}
+              } shadow-lg p-6 hover:shadow-xl transition-shadow w-[280px] h-[550px] flex flex-col justify-between mx-auto`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -449,14 +449,14 @@ const PricingCards = () => {
                 </div>
               </div>
 
-              <div className="space-y-1">
+              <div className="space-y-1 flex-grow overflow-y-auto">
                 {plan.features.map((feature) => (
                   <div
                     key={feature.label}
-                    className="flex items-center text-gray-600 text-sm hover:bg-gray-50 py-1 px-2 rounded-lg transition-colors"
+                    className="flex items-center justify-between text-gray-600 text-sm hover:bg-gray-50 py-1 px-2 rounded-lg transition-colors"
                   >
-                    <span className="w-1/2">{feature.label}</span>
-                    <span className={`w-1/2 font-medium ${
+                    <span className="w-[45%] truncate">{feature.label}</span>
+                    <span className={`w-[45%] font-medium text-right truncate ${
                       typeof feature.value === 'boolean' ? 'text-[#0037C1]' : ''
                     }`}>
                       {typeof feature.value === 'boolean' ? '✓' : feature.value}
@@ -468,8 +468,8 @@ const PricingCards = () => {
               <div className="mt-6">
                 <Button
                   variant={plan.popular ? "primary" : "secondary"}
-                  size="lg"
-                  className={`w-full transform transition-all hover:scale-105 text-white ${
+                  size="md"
+                  className={`w-full transform transition-all hover:scale-105 text-white text-sm ${
                     plan.popular
                       ? 'bg-[#0037C1] hover:bg-[#0042E5] shadow-lg'
                       : 'bg-gray-500 hover:bg-gray-600'
