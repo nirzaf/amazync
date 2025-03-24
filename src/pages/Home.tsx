@@ -9,6 +9,7 @@ import CMSDevelopmentSection from '../components/CMSDevelopmentSection';
 import FrameworkDevelopmentSection from '../components/FrameworkDevelopmentSection';
 import ControlPanelSection from '../components/ControlPanelSection';
 import HostingSupportSection from '../components/HostingSupportSection';
+import AdvancedSupportSection from '../components/AdvancedSupportSection';
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       <HostingSupportSection />
       <Features />
       <Testimonials />
+      <AdvancedSupportSection />
       <FAQ />
       <Footer />
     </div>

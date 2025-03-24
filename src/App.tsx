@@ -10,6 +10,7 @@ import CMSDevelopmentSection from './components/CMSDevelopmentSection';
 import FrameworkDevelopmentSection from './components/FrameworkDevelopmentSection';
 import ControlPanelSection from './components/ControlPanelSection';
 import HostingSupportSection from './components/HostingSupportSection';
+import AdvancedSupportSection from './components/AdvancedSupportSection';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <HostingSupportSection />
         <Features />
         <Testimonials />
+        <AdvancedSupportSection />
         <FAQ />
         <Footer />
       </div>
