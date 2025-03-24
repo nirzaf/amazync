@@ -6,6 +6,10 @@ import Features from './components/Features';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import CMSDevelopmentSection from './components/CMSDevelopmentSection';
+import FrameworkDevelopmentSection from './components/FrameworkDevelopmentSection';
+import ControlPanelSection from './components/ControlPanelSection';
+import HostingSupportSection from './components/HostingSupportSection';
 
 function App() {
   return (
@@ -14,6 +18,10 @@ function App() {
         <HeroSection />
         <PricingCards />
         <IntegrationSection />
+        <CMSDevelopmentSection />
+        <FrameworkDevelopmentSection />
+        <ControlPanelSection />
+        <HostingSupportSection />
         <Features />
         <Testimonials />
         <FAQ />
