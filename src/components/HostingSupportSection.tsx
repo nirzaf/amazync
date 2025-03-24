@@ -8,7 +8,7 @@ const HostingSupportSection = () => {
     {
       name: 'Managed Hosting',
       description: 'Comprehensive managed hosting solutions with automated backups, updates, and performance optimization.',
-      image: 'https://ik.imagekit.io/qch9hivley/home-support.png?updatedAt=1742508138367'
+      image: 'https://ik.imagekit.io/qch9hivley/Managed%20Hosting.png?updatedAt=1742843529894'
     },
     {
       name: '24/7 Technical Support',
