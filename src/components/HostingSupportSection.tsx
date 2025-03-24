@@ -18,7 +18,7 @@ const HostingSupportSection = () => {
     {
       name: 'Security & Maintenance',
       description: 'Proactive security monitoring, regular maintenance, and instant threat detection to protect your digital assets.',
-      image: 'https://ik.imagekit.io/qch9hivley/home-control_panel.png?updatedAt=1742508119275'
+      image: 'https://ik.imagekit.io/qch9hivley/Security%20&%20Maintenance.jpeg?updatedAt=1742843651001'
     }
   ];
 
