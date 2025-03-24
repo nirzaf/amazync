@@ -13,7 +13,7 @@ const HostingSupportSection = () => {
     {
       name: '24/7 Technical Support',
       description: 'Round-the-clock expert technical support to ensure your applications run smoothly and efficiently.',
-      image: 'https://ik.imagekit.io/qch9hivley/amazync-host-ai.jpeg?updatedAt=1742517562890'
+      image: 'https://ik.imagekit.io/qch9hivley/24_7%20Technical%20Support.jpeg?updatedAt=1742843363103'
     },
     {
       name: 'Security & Maintenance',
