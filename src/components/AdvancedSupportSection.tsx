@@ -3,10 +3,10 @@ import { useTheme } from '../context/ThemeContext';
 import Button from './Button';
 
 const AdvancedSupportSection = () => {
-  const { colors } = useTheme();
+  useTheme();
 
   return (
-    <section className="py-20 bg-gradient-to-b from-[#0B2A97] to-[#1435AA] overflow-hidden">
+    <section className="py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image Column */}
@@ -35,19 +35,19 @@ const AdvancedSupportSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="text-white"
+            className="text-[#192C99]"
           >
             <div className="inline-block mb-4">
-              <span className="bg-white/10 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-sm font-medium border border-white/20 shadow-lg">
+              <span className="bg-[#192C99]/10 backdrop-blur-md text-[#192C99] px-4 py-1.5 rounded-full text-sm font-medium border border-[#192C99]/20 shadow-lg">
                 Premium Support
               </span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-[#192C99]">
               Optimized Server for <span className="text-[#EC3A1C]">Ultimate Performance</span>
             </h2>
             
-            <div className="space-y-6 mb-8 text-white/80">
+            <div className="space-y-6 mb-8 text-[#192C99]/80">
               <p>
                 Finding industry-premium products and services at affordable prices will hugely benefit your business. All our services are here to provide you with an improved Internet experience.
               </p>

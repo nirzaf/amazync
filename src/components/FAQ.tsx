@@ -30,7 +30,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 bg-[#0B2A97]">
+    <section className="py-20 bg-gradient-to-tl from-[#192C99] to-[#1934B6]">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

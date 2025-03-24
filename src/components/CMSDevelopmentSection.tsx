@@ -23,7 +23,7 @@ const CMSDevelopmentSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-[#0B2A97] to-[#1934B6]">
+    <section className="py-20 bg-gradient-to-br from-[#192C99] to-[#1934B6]">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

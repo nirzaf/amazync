@@ -23,7 +23,7 @@ const FrameworkDevelopmentSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-tr from-[#192C99] to-[#1934B6]">
+    <section className="py-20 bg-gradient-to-r from-white to-[#DBD9EC]">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,10 +32,10 @@ const FrameworkDevelopmentSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-[#192C99] mb-4">
             Framework Development
           </h2>
-          <p className="text-xl text-white/80">
+          <p className="text-xl text-[#192C99]/80">
             Build robust and scalable applications with our expert development services
           </p>
         </motion.div>
@@ -58,8 +58,8 @@ const FrameworkDevelopmentSection = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-white mb-3">{framework.name}</h3>
-                <p className="text-white/80">{framework.description}</p>
+                <h3 className="text-2xl font-bold text-[#192C99] mb-3">{framework.name}</h3>
+                <p className="text-[#192C99]/80">{framework.description}</p>
               </div>
             </motion.div>
           ))}

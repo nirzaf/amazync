@@ -392,7 +392,7 @@ const PricingCards = () => {
   };
 
   return (
-    <section className="py-10 bg-gradient-to-r from-[#DBD9EC] to-[#7882B6]">
+    <section className="py-20 bg-white">
       {/* Hosting Type Tabs */}
       <div className="max-w-7xl mx-auto px-4 mb-12">
         <div className="flex flex-wrap justify-center gap-4 overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">

@@ -70,7 +70,7 @@ const IntegrationSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-[#0B2A97] to-[#1435AA]">
+    <section className="py-20 bg-gradient-to-r from-[#DBD9EC] to-white">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -79,10 +79,10 @@ const IntegrationSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-[#192C99] mb-4">
             Integrated with more than 100+ applications you love.
           </h2>
-          <p className="text-xl text-white/80">
+          <p className="text-xl text-[#192C99]/80">
             Creating a website from scratch can feel like a time suck. Choose from a variety of pre-assembled apps and let our nifty 1-click installer do the work for you!
           </p>
         </motion.div>
@@ -95,13 +95,13 @@ const IntegrationSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-md rounded-xl p-6 flex flex-col items-center justify-center gap-4 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl border border-white/10 hover:border-white/20"
+              className="bg-[#192C99]/10 backdrop-blur-md rounded-xl p-6 flex flex-col items-center justify-center gap-4 hover:bg-[#192C99]/20 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl border border-[#192C99]/10 hover:border-[#192C99]/20"
             >
-              <div className="bg-white/5 rounded-full p-4 backdrop-blur-md">
+              <div className="bg-[#192C99]/5 rounded-full p-4 backdrop-blur-md">
                 {integration.icon}
               </div>
-              <h3 className="text-xl font-semibold text-white">{integration.name}</h3>
-              <p className="text-white/70 text-center text-sm">{integration.description}</p>
+              <h3 className="text-xl font-semibold text-[#192C99]">{integration.name}</h3>
+              <p className="text-[#192C99]/70 text-center text-sm">{integration.description}</p>
             </motion.div>
           ))}
         </div>
