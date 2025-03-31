@@ -24,7 +24,6 @@ const HeroSection = () => {
           >
             <img src="https://ik.imagekit.io/qch9hivley/image.png?updatedAt=1743447013040" alt="Logo" className="h-8 w-auto" />
             <div className="flex items-center gap-2">
-              <span role="img" aria-label="rocket" className="text-2xl animate-bounce">🚀</span>
               <span className={`font-medium text-[${colors.lavenderWeb}]`}></span>
             </div>
           </motion.div>
@@ -107,7 +106,7 @@ const HeroSection = () => {
                 className="inline-block mb-6"
               >
                 <span className="bg-[${colors.glaucous}]/40 backdrop-blur-md text-white px-6 py-2.5 rounded-full text-sm font-semibold border border-[${colors.lavenderWeb}]/20 shadow-lg [text-shadow:_1px_1px_0_rgba(0,0,0,0.3)] flex items-center gap-2 justify-center">
-                  <span className="text-lg">🚀</span>
+                  <span className="text-2xl animate-bounce">🚀</span>
                   <span>Get Started in Minutes</span>
                 </span>
               </motion.div>
