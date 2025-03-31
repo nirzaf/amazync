@@ -35,7 +35,7 @@ jobs:
           timestamp=$(date +"%Y%m%d-%H%M%S")
           backup_branch="backup/${timestamp}"
           git checkout -b "$backup_branch"
-          git remote set-url origin https://${REPO_PAT}@github.com/${{ github.repository }}.git
+          git remote set-url origin https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
           git push origin "$backup_branch"
-        env:
-          REPO_PAT: ${{ secrets.REPO_PAT }}
+        permissions:
+          contents: write
