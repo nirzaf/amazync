@@ -30,9 +30,12 @@ jobs:
       - name: Create backup branch
         if: success()
         run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           timestamp=$(date +"%Y%m%d-%H%M%S")
           backup_branch="backup/${timestamp}"
           git checkout -b "$backup_branch"
+          git remote set-url origin https://${REPO_PAT}@github.com/${{ github.repository }}.git
           git push origin "$backup_branch"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_PAT: ${{ secrets.REPO_PAT }}
