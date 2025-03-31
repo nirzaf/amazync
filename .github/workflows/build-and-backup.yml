@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-backup:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
       - name: Checkout code
@@ -37,5 +39,3 @@ jobs:
           git checkout -b "$backup_branch"
           git remote set-url origin https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
           git push origin "$backup_branch"
-        permissions:
-          contents: write
