@@ -25,8 +25,8 @@ const HeroSection = () => {
           >
             <div className="relative">
               <OrbitingArrow />
+              <img src="https://ik.imagekit.io/qch9hivley/image.png?updatedAt=1743447013040" alt="Logo" className="h-8 w-auto relative z-10" />
             </div>
-            <img src="https://ik.imagekit.io/qch9hivley/image.png?updatedAt=1743447013040" alt="Logo" className="h-8 w-auto relative z-10" />
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
