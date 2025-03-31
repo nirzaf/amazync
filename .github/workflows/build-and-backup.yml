@@ -30,8 +30,8 @@ jobs:
       - name: Create backup branch
         if: success()
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "nirzaf"
+          git config --global user.email "mfmfazrin1986@gmail.com"
           timestamp=$(date +"%Y%m%d-%H%M%S")
           backup_branch="backup/${timestamp}"
           git checkout -b "$backup_branch"
