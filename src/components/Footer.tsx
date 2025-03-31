@@ -36,7 +36,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-r from-[#0B2A97] to-[#1435AA] text-white border-t border-[#1435AA]">
+    <footer className="bg-gradient-to-r from-[#081D66] to-[#0F2680] text-white border-t border-[#1435AA]">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {Object.entries(footerLinks).map(([category, links], index) => (
