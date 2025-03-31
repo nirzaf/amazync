@@ -20,10 +20,13 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center gap-2"
+            className="flex items-center gap-4"
           >
-            <span role="img" aria-label="rocket" className="text-2xl animate-bounce">🚀</span>
-            <span className={`font-medium text-[${colors.lavenderWeb}]`}>NameHost Has Now Expanded To The UK!</span>
+            <img src="https://ik.imagekit.io/qch9hivley/image.png?updatedAt=1743447013040" alt="Logo" className="h-8 w-auto" />
+            <div className="flex items-center gap-2">
+              <span role="img" aria-label="rocket" className="text-2xl animate-bounce">🚀</span>
+              <span className={`font-medium text-[${colors.lavenderWeb}]`}></span>
+            </div>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
@@ -104,8 +107,8 @@ const HeroSection = () => {
                 className="inline-block mb-6"
               >
                 <span className="bg-[${colors.glaucous}]/40 backdrop-blur-md text-white px-6 py-2.5 rounded-full text-sm font-semibold border border-[${colors.lavenderWeb}]/20 shadow-lg [text-shadow:_1px_1px_0_rgba(0,0,0,0.3)] flex items-center gap-2 justify-center">
-                  <span className="text-lg">🎉</span>
-                  <span>Limited Time Offer</span>
+                  <span className="text-lg">🚀</span>
+                  <span>Get Started in Minutes</span>
                 </span>
               </motion.div>
 
@@ -116,10 +119,10 @@ const HeroSection = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="text-6xl md:text-7xl font-bold text-white mb-6 relative [text-shadow:_1px_1px_0_rgba(0,0,0,0.5)]"
               >
-                Fast Hosting & Domains
+                Web Hosting
                 <br />
                 <span className="text-[#EC3A1C] font-extrabold">
-                  Made Easy
+                  Made Easy!
                 </span>
               </motion.h1>
 
@@ -130,8 +133,8 @@ const HeroSection = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="text-2xl md:text-3xl text-white mb-12 relative [text-shadow:_1px_1px_0_rgba(0,0,0,0.5)]"
               >
-                2025 Spring Savings Event: 
-                <span className={`text-[${colors.chiliRed}] font-bold`}> Up to 70% Off!</span>
+                Powerful Website Hosting with
+                <span className={`text-[${colors.chiliRed}] font-bold`}> Unlimited Features</span>
               </motion.p>
 
               {/* CTA Buttons */}
@@ -156,7 +159,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.5, delay: 0.6 }}
                 className={`mt-12 flex flex-wrap justify-center gap-8 text-[${colors.lavenderWeb}]`}
               >
-                {['99.9% Uptime', '24/7 Support', 'Free SSL', 'Money Back Guarantee'].map((feature) => (
+                {['Free Domain Name', 'Unlimited SSD Storage', '99.9% Uptime', '24/7 Expert Support'].map((feature) => (
                   <div key={feature} className="flex items-center gap-2 group">
                     <div className="flex items-center justify-center bg-gradient-to-r from-[#2A45C7]/80 to-[#3B5CE9]/80 backdrop-blur-md rounded-full p-4 shadow-lg border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,92,233,0.5)] transform hover:-translate-y-1">
                       <span className="text-[#4AFF91] font-bold group-hover:scale-110 transition-transform drop-shadow-[0_0_3px_rgba(74,255,145,0.7)]">✓</span>
