@@ -13,7 +13,7 @@ const HeroSection = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 px-4 relative shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+        className="bg-gradient-to-r from-blue-800 to-purple-800 text-white py-2 px-4 relative shadow-lg hover:from-blue-900 hover:to-purple-900 transition-all duration-300"
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <motion.div 
@@ -83,9 +83,9 @@ const HeroSection = () => {
       </motion.div>
 
       {/* Hero Section */}
-      <div className="min-h-[700px] relative overflow-hidden bg-[#0B2A97]">
+      <div className="min-h-[700px] relative overflow-hidden bg-[#081D6B]">
         {/* Background Pattern and Animation Layer */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-opacity-90">
           <ServerNetworkAnimation />
         </div>
         
