@@ -8,7 +8,7 @@ interface Integration {
 }
 
 const IntegrationSection = () => {
-  const { colors } = useTheme();
+  useTheme();
 
   const integrations: Integration[] = [
     {
@@ -70,7 +70,7 @@ const IntegrationSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-r from-[#DBD9EC] to-white">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -80,14 +80,14 @@ const IntegrationSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-[#192C99] mb-4">
-            Integrated with more than 100+ applications you love.
+            Integrations & Technologies
           </h2>
           <p className="text-xl text-[#192C99]/80">
-            Creating a website from scratch can feel like a time suck. Choose from a variety of pre-assembled apps and let our nifty 1-click installer do the work for you!
+            Seamlessly integrate with your favorite tools and platforms
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {integrations.map((integration, index) => (
             <motion.div
               key={integration.name}
@@ -95,13 +95,13 @@ const IntegrationSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-[#192C99]/10 backdrop-blur-md rounded-xl p-6 flex flex-col items-center justify-center gap-4 hover:bg-[#192C99]/20 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl border border-[#192C99]/10 hover:border-[#192C99]/20"
+              className="bg-[#192C99]/10 backdrop-blur-sm rounded-xl p-8 flex flex-col items-center justify-center gap-6 hover:bg-[#192C99]/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl border border-[#192C99]/10 hover:border-[#192C99]/20 group"
             >
-              <div className="bg-[#192C99]/5 rounded-full p-4 backdrop-blur-md">
+              <div className="bg-[#192C99]/5 rounded-full p-6 backdrop-blur-lg shadow-[0_0_15px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300">
                 {integration.icon}
               </div>
-              <h3 className="text-xl font-semibold text-[#192C99]">{integration.name}</h3>
-              <p className="text-[#192C99]/70 text-center text-sm">{integration.description}</p>
+              <h3 className="text-2xl font-semibold text-white group-hover:text-white/90 transition-colors duration-300">{integration.name}</h3>
+              <p className="text-white/90 text-center text-base leading-relaxed">{integration.description}</p>
             </motion.div>
           ))}
         </div>

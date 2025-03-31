@@ -23,7 +23,7 @@ const FrameworkDevelopmentSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-r from-white to-[#DBD9EC]">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ const FrameworkDevelopmentSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1"
+              className="group bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="aspect-video overflow-hidden">
                 <img

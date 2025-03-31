@@ -23,7 +23,7 @@ const ControlPanelSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-r from-[#DBD9EC] to-white">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ const ControlPanelSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-[#192C99]/5 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-[#192C99]/10 transition-all duration-300 transform hover:-translate-y-1"
+              className="group bg-[#192C99]/10 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-[#192C99]/20 transition-all duration-300 transform hover:-translate-y-1 border border-[#192C99]/10 hover:border-[#192C99]/20"
             >
               <div className="aspect-video overflow-hidden">
                 <img
