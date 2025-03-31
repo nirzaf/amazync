@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Button from './Button';
 import ServerNetworkAnimation from './ServerNetworkAnimation';
 import { useTheme } from '../context/ThemeContext';
+import OrbitingArrow from './OrbitingArrow';
 
 const HeroSection = () => {
   const { colors } = useTheme();
@@ -20,12 +21,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center gap-4"
+            className="flex items-center gap-4 relative"
           >
-            <img src="https://ik.imagekit.io/qch9hivley/image.png?updatedAt=1743447013040" alt="Logo" className="h-8 w-auto" />
-            <div className="flex items-center gap-2">
-              <span className={`font-medium text-[${colors.lavenderWeb}]`}></span>
+            <div className="relative">
+              <OrbitingArrow />
             </div>
+            <img src="https://ik.imagekit.io/qch9hivley/image.png?updatedAt=1743447013040" alt="Logo" className="h-8 w-auto relative z-10" />
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
@@ -36,12 +37,12 @@ const HeroSection = () => {
             <Button variant="primary" size="sm">
               Buy Now!
             </Button>
-            <button className={`text-[${colors.lavenderWeb}] hover:text-white transition-colors`}>×</button>
           </motion.div>
         </div>
+        <div className="flex items-center gap-2">
+          <span className={`font-medium text-[${colors.lavenderWeb}]`}></span>
+        </div>
       </motion.div>
-
-      {/* Secondary Navigation */}
       <motion.div 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -81,8 +82,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </motion.div>
-
-      {/* Hero Section */}
       <div className="min-h-[700px] relative overflow-hidden bg-[#081D6B]">
         {/* Background Pattern and Animation Layer */}
         <div className="absolute inset-0 bg-opacity-90">

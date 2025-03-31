@@ -27,41 +27,39 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <motion.span
-                initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
-                className={`text-2xl font-bold ${scrolled ? 'text-white' : 'text-[#1934B6]'} transition-colors duration-300`}
-              >
+              <span className={`text-2xl font-bold ${scrolled ? 'text-white' : 'text-[#1934B6]'} transition-colors duration-300`}>
                 NameHost
-              </motion.span>
+              </span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {['/', '/about', '/contact'].map((path) => (
-              <Link
-                key={path}
-                to={path}
-                className={`relative group ${scrolled ? 'text-white' : 'text-gray-700'} transition-colors duration-300`}
-              >
-                {path === '/' ? 'Home' : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
-                <motion.div
-                  initial={{ width: location.pathname === path ? '100%' : '0%' }}
-                  animate={{ width: location.pathname === path ? '100%' : '0%' }}
-                  className={`absolute bottom-0 left-0 h-0.5 ${scrolled ? 'bg-white' : 'bg-[#1934B6]'} transition-colors duration-300`}
-                />
-                <motion.div
-                  initial={{ width: '0%' }}
-                  whileHover={{ width: '100%' }}
-                  className={`absolute bottom-0 left-0 h-0.5 ${scrolled ? 'bg-white' : 'bg-[#1934B6]'} opacity-50 transition-colors duration-300`}
-                />
-              </Link>
-            ))}
+            <div className="flex items-center space-x-8">
+              {['/', '/about', '/contact'].map((path) => (
+                <Link
+                  key={path}
+                  to={path}
+                  className={`relative group ${scrolled ? 'text-white' : 'text-gray-700'} transition-colors duration-300`}
+                >
+                  {path === '/' ? 'Home' : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+                  <motion.div
+                    initial={{ width: location.pathname === path ? '100%' : '0%' }}
+                    animate={{ width: location.pathname === path ? '100%' : '0%' }}
+                    className={`absolute bottom-0 left-0 h-0.5 ${scrolled ? 'bg-white' : 'bg-[#1934B6]'} transition-colors duration-300`}
+                  />
+                  <motion.div
+                    initial={{ width: '0%' }}
+                    whileHover={{ width: '100%' }}
+                    className={`absolute bottom-0 left-0 h-0.5 ${scrolled ? 'bg-white' : 'bg-[#1934B6]'} opacity-50 transition-colors duration-300`}
+                  />
+                </Link>
+              ))}
+            </div>
             <Button
               variant={scrolled ? "secondary" : "primary"}
               size="sm"
-              className="transform transition-transform hover:scale-105"
+              className="ml-auto"
             >
               Get Started
             </Button>
