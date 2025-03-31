@@ -65,7 +65,7 @@ const HeroSection = () => {
             </div>
             <div className={`flex items-center gap-2 hover:text-[${colors.lavenderWeb}] transition-colors cursor-pointer group`}>
               <span className={`text-[${colors.glaucous}] group-hover:text-[${colors.lavenderWeb}] transition-colors`}>📞</span>
-              <span className="hidden md:inline">1-855-984-6263</span>
+              <span className="hidden md:inline">+94752021670</span>
             </div>
           </motion.div>
           <motion.div 
