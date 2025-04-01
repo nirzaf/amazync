@@ -29,7 +29,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-b from-[#192C99] to-[#1934B6]">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,10 +38,10 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-[#192C99] mb-4">
+          <h2 className="text-4xl font-bold text-white mb-4">
             What Our Customers Say
           </h2>
-          <p className="text-xl text-[#192C99]/80">
+          <p className="text-xl text-white/80">
             Join thousands of satisfied customers who trust us with their hosting needs
           </p>
         </motion.div>
@@ -54,21 +54,21 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm shadow-lg"
+              className="p-6 rounded-2xl bg-white/10 backdrop-blur-sm shadow-lg border border-white/20 hover:bg-white/20 transition-all duration-300"
             >
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <span key={i} className="text-yellow-500">★</span>
                 ))}
               </div>
-              <p className="text-gray-700 mb-6 italic text-lg">
+              <p className="text-white mb-6 italic text-lg">
                 "{testimonial.content}"
               </p>
               <div>
-                <h4 className="text-lg font-bold text-gray-900">
+                <h4 className="text-lg font-bold text-white">
                   {testimonial.name}
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-white/70">
                   {testimonial.role} at {testimonial.company}
                 </p>
               </div>
