@@ -8,17 +8,17 @@ const HostingSupportSection = () => {
     {
       name: 'Managed Hosting',
       description: 'Comprehensive managed hosting solutions with automated backups, updates, and performance optimization.',
-      image: 'https://ik.imagekit.io/qch9hivley/Managed%20Hosting.png?updatedAt=1742843529894'
+      image: 'https://ik.imagekit.io/qch9hivley/Managed%20Hosting.png?updatedAt=1742843529894&tr=w-800,h-450'
     },
     {
       name: '24/7 Technical Support',
       description: 'Round-the-clock expert technical support to ensure your applications run smoothly and efficiently.',
-      image: 'https://ik.imagekit.io/qch9hivley/24_7%20Technical%20Support.jpeg?updatedAt=1742843363103'
+      image: 'https://ik.imagekit.io/qch9hivley/24_7%20Technical%20Support.jpeg?updatedAt=1742843363103&tr=w-800,h-450'
     },
     {
       name: 'Security & Maintenance',
       description: 'Proactive security monitoring, regular maintenance, and instant threat detection to protect your digital assets.',
-      image: 'https://ik.imagekit.io/qch9hivley/Security%20&%20Maintenance.jpeg?updatedAt=1742843651001'
+      image: 'https://ik.imagekit.io/qch9hivley/Security%20&%20Maintenance.jpeg?updatedAt=1742843651001&tr=w-800,h-450'
     }
   ];
 

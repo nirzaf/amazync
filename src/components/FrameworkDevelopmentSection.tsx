@@ -8,12 +8,12 @@ const FrameworkDevelopmentSection = () => {
     {
       name: 'Laravel Development',
       description: 'Professional Laravel application development with secure, scalable, and maintainable solutions for your business.',
-      image: 'https://ik.imagekit.io/qch9hivley/laravel-development.png?updatedAt=1742841464094'
+      image: 'https://ik.imagekit.io/qch9hivley/laravel-development.png?updatedAt=1742841464094&tr=w-800,h-450'
     },
     {
       name: 'Custom Web Solutions',
       description: 'Tailored web application development that meets your unique business requirements and drives growth.',
-      image: 'https://ik.imagekit.io/qch9hivley/custom-web-development.png?updatedAt=1742841593512'
+      image: 'https://ik.imagekit.io/qch9hivley/custom-web-development.png?updatedAt=1742841593512&tr=w-800,h-450'
     },
     {
       name: 'API Integration',

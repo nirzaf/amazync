@@ -8,17 +8,17 @@ const CMSDevelopmentSection = () => {
     {
       name: 'WordPress Development',
       description: 'Custom theme development, plugin integration, and complete WordPress solutions tailored to your business needs.',
-      image: 'https://ik.imagekit.io/qch9hivley/wordpress-themes.png?updatedAt=1742508163108'
+      image: 'https://ik.imagekit.io/qch9hivley/wordpress-themes.png?updatedAt=1742508163108&tr=w-800,h-450'
     },
     {
       name: 'Joomla Solutions',
       description: 'Professional Joomla development services for creating dynamic and scalable business websites.',
-      image: 'https://ik.imagekit.io/qch9hivley/Generated%20Image%20March%2021,%202025%20-%203_45AM.png.jpeg?updatedAt=1742518010506'
+      image: 'https://ik.imagekit.io/qch9hivley/Generated%20Image%20March%2021,%202025%20-%203_45AM.png.jpeg?updatedAt=1742518010506&tr=w-800,h-450'
     },
     {
       name: 'Moodle Implementation',
       description: 'Complete Moodle setup and customization for educational institutions and online learning platforms.',
-      image: 'https://ik.imagekit.io/qch9hivley/Generated%20Image%20March%2021,%202025%20-%203_41AM.png.jpeg?updatedAt=1742517809707'
+      image: 'https://ik.imagekit.io/qch9hivley/Generated%20Image%20March%2021,%202025%20-%203_41AM.png.jpeg?updatedAt=1742517809707&tr=w-800,h-450'
     }
   ];
 
