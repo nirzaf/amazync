@@ -71,7 +71,7 @@ const IntegrationSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-[#192C99] to-[#1934B6]">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -80,10 +80,10 @@ const IntegrationSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-[#192C99] mb-4">
+          <h2 className="text-4xl font-bold text-white mb-4">
             Integrations & Technologies
           </h2>
-          <p className="text-xl text-[#192C99]/80">
+          <p className="text-xl text-white/80">
             Seamlessly integrate with your favorite tools and platforms
           </p>
         </motion.div>
@@ -96,13 +96,13 @@ const IntegrationSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-[#192C99]/10 backdrop-blur-sm rounded-xl p-8 flex flex-col items-center justify-center gap-6 hover:bg-[#192C99]/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl border border-[#192C99]/10 hover:border-[#192C99]/20 group"
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-8 flex flex-col items-center justify-center gap-6 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl border border-white/10 hover:border-white/20 group"
             >
-              <div className="bg-[#192C99]/5 rounded-full p-6 backdrop-blur-lg shadow-[0_0_15px_rgba(25,44,153,0.1)] group-hover:shadow-[0_0_25px_rgba(25,44,153,0.2)] transition-all duration-300">
+              <div className="bg-white/5 rounded-full p-6 backdrop-blur-lg shadow-[0_0_15px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300">
                 {integration.icon}
               </div>
-              <h3 className="text-2xl font-semibold text-[#192C99] group-hover:text-[#192C99]/90 transition-colors duration-300">{integration.name}</h3>
-              <p className="text-[#192C99]/90 text-center text-base leading-relaxed">{integration.description}</p>
+              <h3 className="text-2xl font-semibold text-white group-hover:text-white/90 transition-colors duration-300">{integration.name}</h3>
+              <p className="text-white/80 text-center text-base leading-relaxed">{integration.description}</p>
             </motion.div>
           ))}
         </div>
