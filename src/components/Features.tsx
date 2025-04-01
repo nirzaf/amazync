@@ -63,15 +63,35 @@ const Features = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-[#192C99]/10 backdrop-blur-sm rounded-xl p-6 flex flex-col items-center text-center hover:bg-[#192C99]/20 transition-all duration-300 transform hover:-translate-y-1 border border-[#192C99]/10 hover:border-[#192C99]/20"
+              className="bg-gradient-to-br from-white to-[#192C99]/5 backdrop-blur-sm rounded-xl p-8 flex flex-col items-center text-center hover:bg-gradient-to-br hover:from-white hover:to-[#192C99]/10 transition-all duration-300 transform hover:-translate-y-2 border border-[#192C99]/10 hover:border-[#192C99]/30 shadow-lg hover:shadow-xl relative overflow-hidden group"
             >
-              <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold text-[#192C99] mb-2">
+              {/* Decorative background element */}
+              <div className="absolute -right-10 -top-10 w-40 h-40 bg-[#192C99]/5 rounded-full group-hover:bg-[#192C99]/10 transition-all duration-500"></div>
+              
+              <motion.div 
+                className="text-5xl mb-6 bg-[#192C99]/10 p-5 rounded-full relative z-10 group-hover:bg-[#192C99]/20 transition-all duration-300 shadow-md group-hover:shadow-lg"
+                whileHover={{ rotate: [0, -5, 5, -5, 0], scale: 1.1 }}
+                transition={{ duration: 0.5 }}
+              >
+                {feature.icon}
+              </motion.div>
+              
+              <h3 className="text-2xl font-bold text-[#192C99] mb-3 relative z-10">
                 {feature.title}
               </h3>
-              <p className="text-[#192C99]/80">
+              
+              <p className="text-[#192C99]/80 relative z-10 leading-relaxed">
                 {feature.description}
               </p>
+              
+              {/* Bottom accent line with animation */}
+              <motion.div 
+                className="h-1 bg-gradient-to-r from-[#192C99] to-[#FF6B2C] w-0 group-hover:w-1/2 absolute bottom-0 left-1/4 transition-all duration-300 rounded-t-full"
+                initial={{ width: 0 }}
+                whileInView={{ width: '20%' }}
+                transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                viewport={{ once: true }}
+              />
             </motion.div>
           ))}
         </div>
