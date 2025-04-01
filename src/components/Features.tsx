@@ -42,9 +42,8 @@ const Features = () => {
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-[#192C99] mb-4">
@@ -60,9 +59,8 @@ const Features = () => {
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
               className="bg-gradient-to-br from-white to-[#192C99]/5 backdrop-blur-sm rounded-xl p-8 flex flex-col items-center text-center hover:bg-gradient-to-br hover:from-white hover:to-[#192C99]/10 transition-all duration-300 transform hover:-translate-y-2 border border-[#192C99]/10 hover:border-[#192C99]/30 shadow-lg hover:shadow-xl relative overflow-hidden group"
             >
               {/* Decorative background element */}
@@ -88,9 +86,8 @@ const Features = () => {
               <motion.div 
                 className="h-1 bg-gradient-to-r from-[#192C99] to-[#FF6B2C] w-0 group-hover:w-1/2 absolute bottom-0 left-1/4 transition-all duration-300 rounded-t-full"
                 initial={{ width: 0 }}
-                whileInView={{ width: '20%' }}
+                animate={{ width: '20%' }}
                 transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
-                viewport={{ once: true }}
               />
             </motion.div>
           ))}

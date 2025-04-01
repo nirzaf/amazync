@@ -12,8 +12,8 @@ const AdvancedSupportSection = () => {
           {/* Image Column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             className="relative"
           >
@@ -32,8 +32,8 @@ const AdvancedSupportSection = () => {
           {/* Content Column */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             className="text-[#192C99]"
           >
@@ -63,8 +63,8 @@ const AdvancedSupportSection = () => {
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
               <Button 

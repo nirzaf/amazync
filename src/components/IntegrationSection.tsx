@@ -75,9 +75,8 @@ const IntegrationSection = () => {
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-white mb-4">
@@ -93,9 +92,8 @@ const IntegrationSection = () => {
             <motion.div
               key={integration.name}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
               whileHover={{ scale: 1.05, rotateY: 5, rotateX: -5 }}
               className="relative bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-md rounded-xl p-6 flex flex-col items-center justify-center gap-5 transition-all duration-300 transform hover:shadow-2xl border border-white/20 hover:border-white/40 group overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.25)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.35)]"
             >

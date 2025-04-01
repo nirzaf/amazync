@@ -27,9 +27,8 @@ const CMSDevelopmentSection = () => {
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-[#192C99] mb-4">
@@ -45,10 +44,9 @@ const CMSDevelopmentSection = () => {
             <motion.div
               key={service.name}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-xl bg-[#192C99]/10 backdrop-blur-md p-6 hover:bg-[#192C99]/20 transition-all duration-300"
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex flex-col items-center text-center hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2 border border-white/20 hover:border-white/40 shadow-lg hover:shadow-xl relative overflow-hidden group"
             >
               <div className="aspect-video overflow-hidden rounded-lg mb-6">
                 <img
