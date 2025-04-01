@@ -14,7 +14,6 @@ const AdvancedSupportSection = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
             className="relative"
           >
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-[#192C99]/10 transform hover:scale-[1.02] transition-transform duration-500">
@@ -34,7 +33,6 @@ const AdvancedSupportSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
             className="text-[#192C99]"
           >
             <div className="inline-block mb-4">
@@ -65,7 +63,6 @@ const AdvancedSupportSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
             >
               <Button 
                 variant="primary" 

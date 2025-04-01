@@ -424,7 +424,6 @@ const PricingCards = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
               className={`relative bg-white rounded-lg border-2 ${
                 plan.popular ? 'border-[#0037C1]' : 'border-gray-100'
               } shadow-lg p-6 hover:shadow-xl transition-shadow w-[280px] h-[550px] flex flex-col justify-between mx-auto`}
