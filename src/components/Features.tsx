@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 
 const Features = () => {
-  const { colors, gradients } = useTheme();
+  useTheme();
 
   const features = [
     {

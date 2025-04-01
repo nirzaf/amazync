@@ -15,13 +15,13 @@ const Home = () => {
   return (
     <div>
       <HeroSection />
-      <PricingCards />
       <IntegrationSection />
       <CMSDevelopmentSection />
+      <Features />
       <FrameworkDevelopmentSection />
+      <PricingCards />
       <ControlPanelSection />
       <HostingSupportSection />
-      <Features />
       <Testimonials />
       <AdvancedSupportSection />
       <FAQ />

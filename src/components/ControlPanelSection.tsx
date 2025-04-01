@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 
 const ControlPanelSection = () => {
-  const { colors } = useTheme();
+  useTheme();
 
   const features = [
     {

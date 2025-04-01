@@ -12,6 +12,8 @@ type Plan = {
 
 const PricingCards = () => {
   const [activeTab, setActiveTab] = useState('shared');
+  
+  // Section background is white to maintain alternating pattern
 
   const hostingTypes = [
     {

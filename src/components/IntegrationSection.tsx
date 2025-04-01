@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
+import { JSX } from 'react';
 
 interface Integration {
   name: string;
@@ -97,11 +98,11 @@ const IntegrationSection = () => {
               viewport={{ once: true }}
               className="bg-[#192C99]/10 backdrop-blur-sm rounded-xl p-8 flex flex-col items-center justify-center gap-6 hover:bg-[#192C99]/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl border border-[#192C99]/10 hover:border-[#192C99]/20 group"
             >
-              <div className="bg-[#192C99]/5 rounded-full p-6 backdrop-blur-lg shadow-[0_0_15px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300">
+              <div className="bg-[#192C99]/5 rounded-full p-6 backdrop-blur-lg shadow-[0_0_15px_rgba(25,44,153,0.1)] group-hover:shadow-[0_0_25px_rgba(25,44,153,0.2)] transition-all duration-300">
                 {integration.icon}
               </div>
-              <h3 className="text-2xl font-semibold text-white group-hover:text-white/90 transition-colors duration-300">{integration.name}</h3>
-              <p className="text-white/90 text-center text-base leading-relaxed">{integration.description}</p>
+              <h3 className="text-2xl font-semibold text-[#192C99] group-hover:text-[#192C99]/90 transition-colors duration-300">{integration.name}</h3>
+              <p className="text-[#192C99]/90 text-center text-base leading-relaxed">{integration.description}</p>
             </motion.div>
           ))}
         </div>
