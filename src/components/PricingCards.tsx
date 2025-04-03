@@ -405,7 +405,7 @@ const PricingCards = () => {
               className={`w-[200px] flex-shrink-0 flex flex-col items-center px-6 py-4 rounded-lg transition-all transform hover:scale-105 ${
                 activeTab === type.id
                   ? 'bg-[#0037C1] text-white shadow-lg'
-                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
               }`}
             >
               <span className="text-lg font-semibold whitespace-nowrap">{type.title}</span>
@@ -426,7 +426,7 @@ const PricingCards = () => {
               transition={{ duration: 0.5 }}
               className={`relative bg-white rounded-lg border-2 ${
                 plan.popular ? 'border-[#0037C1]' : 'border-gray-100'
-              } shadow-lg p-6 hover:shadow-xl transition-shadow w-[280px] h-[550px] flex flex-col justify-between mx-auto`}
+              } shadow-lg p-6 hover:shadow-xl transition-shadow w-[280px] h-[700px] flex flex-col justify-between mx-auto`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -450,7 +450,7 @@ const PricingCards = () => {
                 </div>
               </div>
 
-              <div className="space-y-1 flex-grow overflow-y-auto">
+              <div className="space-y-1 flex-grow">
                 {plan.features.map((feature) => (
                   <div
                     key={feature.label}
