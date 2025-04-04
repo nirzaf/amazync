@@ -1,0 +1,31 @@
+Frequently Asked Questions
+
+What is CMS Hosting?
+CMS stands for Content Management System, which includes popular tools like Joomla, Drupal, WordPress, etc., so you can deploy your site using any of your preferred CMS which function just as well online as it does in-person with customers.
+
+What is WordPress Hosting?
+WordPress is an open-source Content Management System (CMS) / blogging platform that allows the creation of a website in PHP without the need to code. WordPress Hosting is a web hosting product that is optimized for WordPress, usually comes with WordPress pre-installed. Our WordPress Hosting plans are hosted on the Cloud and are designed to deliver speed, optimized security, backups, scalability and automatic updates.
+
+What makes websites on your Hosting Platform faster?
+During the deployment of your CMS site on our managed hosting platform, we deploy a unique optimization technology, known as ThunderStack. The ThunderStack technology is a potent combination of the powerful features of Varnish, Memcached, Apache, and Nginx. This unique formula gets you the best-managed CMS hosting that guarantees up to 100% better and fastest page load times.
+
+Will CMS be updated automatically?
+Yes, our CMS Hosting will automatically install all core of your installed CMS updates for your websites.
+
+Will I be able to add more websites to my existing plan in the future?
+To add more websites, you will be required to add a new WordPress Hosting plan
+
+Can I use an external email service with my WordPress Hosting plan?
+Yes, you can use any external 3rd party email service with your WordPress Hosting plan. You may also opt an e-mail hosting plan from us. See our e-mail hosting plans.
+
+I have a WordPress website with thousands of daily visitors. Will you be able to handle it?
+Our WordPress hosting platform has the ability to host WordPress sites of all sizes. You can migrate to higher plan any time you want with just a single click.
+
+Which server location should I use?
+Our VPS servers are located in, US, UK, Singapore & German. We advise choosing the location that is closest to your target audience. For example, if your visitors are based in Europe, our UK location will provide the lowest latency. Or, for example, if your visitors are largely located within Asia, our Singapore location will be the best option.
+
+Is an Upgrade or Downgrade possible between the CMS Hosting Plans?
+Yes, you can now easily upgrade your plan from the control panel by simply selecting the new plan and paying. The amount you have already paid for the current plan will get adjusted on a pro rate basis. The downgrade option is not available for any of our CMS Hosting plans at this time.
+
+Is the Money Back Gurantee applicable on CMS Hosting plans?
+Yes, all of our CMS hosting plans come with a 30 days money back guarantee for new users. If you dont like it for any reason you can get a refund for the un-used days.

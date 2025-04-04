@@ -30,7 +30,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-tl from-[#192C99] to-[#1934B6]">
+    <section className="bg-gradient-to-tl from-[#192C99] to-[#1934B6]">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,10 +38,10 @@ const FAQ = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-[#0B2A97] mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-white/80">
+          <p className="text-xl text-gray-600">
             Find answers to common questions about our hosting services
           </p>
         </motion.div>
@@ -53,16 +53,16 @@ const FAQ = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-lg overflow-hidden bg-[#1435AA]"
+              className="rounded-lg overflow-hidden bg-gray-50 border border-gray-200"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-[#1B42C0] transition-colors duration-200"
+                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-200"
               >
-                <span className="text-lg font-semibold text-white">
+                <span className="text-lg font-semibold text-[#0B2A97]">
                   {faq.question}
                 </span>
-                <span className="text-2xl text-white">
+                <span className="text-2xl text-[#0B2A97]">
                   {openIndex === index ? '−' : '+'}
                 </span>
               </button>
@@ -73,7 +73,7 @@ const FAQ = () => {
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="px-6 pb-4 text-white/80"
+                    className="px-6 pb-4 text-gray-600"
                   >
                     {faq.answer}
                   </motion.div>

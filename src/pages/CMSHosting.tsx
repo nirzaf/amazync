@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
 import { ThemeProvider } from '../context/ThemeContext';
 import { Navbar, FAQ, Footer, Testimonials } from '../components/shared';
-import { CMSPricingCards, PreInstalledCMSSection } from '../components/cms-hosting';
+import { CMSPricingCards, FeaturesSection, PreInstalledCMSSection } from '../components/cms-hosting';
 
 const CMSHosting = () => {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-[#0B2A97]">
+      <div className="min-h-screen bg-white">
         <Navbar />
         
         {/* Hero Section with CMS-specific content */}
-        <section className="pt-32 pb-20 bg-[#0B2A97] text-white">
+        <section className="pt-32 pb-20 bg-gradient-to-br from-[#0B2A97] to-[#1934B6] text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -48,16 +48,29 @@ const CMSHosting = () => {
         </section>
         
         {/* CMS Pricing Cards */}
-        <CMSPricingCards />
+        <section className="bg-white">
+          <CMSPricingCards />
+        </section>
+        
+        {/* Features Section */}
+        <section className="bg-gradient-to-br from-[#0B2A97] to-[#1934B6]">
+          <FeaturesSection />
+        </section>
         
         {/* Pre-installed CMS Section */}
-        <PreInstalledCMSSection />
+        <section className="bg-white">
+          <PreInstalledCMSSection />
+        </section>
         
         {/* Testimonials */}
-        <Testimonials />
+        <section className="bg-gradient-to-br from-[#0B2A97] to-[#1934B6]">
+          <Testimonials />
+        </section>
         
         {/* FAQ Section */}
-        <FAQ />
+        <section className="bg-white">
+          <FAQ />
+        </section>
         
         {/* Footer */}
         <Footer />
