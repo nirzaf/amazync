@@ -402,10 +402,10 @@ const PricingCards = () => {
             <button
               key={type.id}
               onClick={() => setActiveTab(type.id)}
-              className={`w-[200px] flex-shrink-0 flex flex-col items-center px-6 py-4 rounded-lg transition-all transform hover:scale-105 ${
+              className={`w-[200px] flex-shrink-0 flex flex-col items-center px-6 py-4 rounded-lg transition-all transform ${activeTab === type.id ? 'hover:scale-[1.02]' : 'hover:scale-105'} ${
                 activeTab === type.id
-                  ? 'bg-[#0037C1] text-white shadow-lg'
-                  : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
+                  ? 'bg-gradient-to-b from-[#0042E5] to-[#0037C1] text-white shadow-[0_8px_15px_-3px_rgba(0,55,193,0.4),0_4px_6px_-4px_rgba(0,55,193,0.4)] border-2 border-[#0037C1] translate-y-[1px]'
+                  : 'bg-gradient-to-b from-white to-[#f8f9fa] text-gray-600 hover:bg-gray-50 border-2 border-gray-200 shadow-[0_6px_12px_-4px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)]'
               }`}
             >
               <span className="text-lg font-semibold whitespace-nowrap">{type.title}</span>
@@ -424,9 +424,9 @@ const PricingCards = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className={`relative bg-white rounded-lg border-2 ${
-                plan.popular ? 'border-[#0037C1]' : 'border-gray-100'
-              } shadow-lg p-6 hover:shadow-xl transition-shadow w-[95%] sm:w-[280px] h-[700px] flex flex-col justify-between mx-auto`}
+              className={`relative bg-gradient-to-b from-white to-[#f9fafc] rounded-lg border-2 ${
+                plan.popular ? 'border-[#0037C1]' : 'border-gray-200'
+              } shadow-[0_10px_30px_-12px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05)] p-6 hover:shadow-[0_20px_30px_-15px_rgba(0,0,0,0.2),0_10px_10px_-5px_rgba(0,0,0,0.1)] transition-all duration-300 transform hover:-translate-y-1 w-[95%] sm:w-[280px] h-[700px] flex flex-col justify-between mx-auto`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -472,8 +472,8 @@ const PricingCards = () => {
                   size="md"
                   className={`w-full transform transition-all hover:scale-105 text-white text-sm ${
                     plan.popular
-                      ? 'bg-[#0037C1] hover:bg-[#0042E5] shadow-lg'
-                      : 'bg-gray-500 hover:bg-gray-600'
+                      ? 'bg-gradient-to-b from-[#0042E5] to-[#0037C1] hover:from-[#0037C1] hover:to-[#0042E5] shadow-[0_8px_15px_-3px_rgba(0,55,193,0.4),0_4px_6px_-4px_rgba(0,55,193,0.4)] border border-[#0042E5]/50 hover:shadow-[0_10px_20px_-5px_rgba(0,55,193,0.5),0_8px_10px_-5px_rgba(0,55,193,0.3)]'
+                      : 'bg-gradient-to-b from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-500 shadow-[0_8px_15px_-3px_rgba(75,85,99,0.3),0_4px_6px_-4px_rgba(75,85,99,0.2)] border border-gray-600/30 hover:shadow-[0_10px_20px_-5px_rgba(75,85,99,0.4),0_8px_10px_-5px_rgba(75,85,99,0.2)]'
                   }`}
                 >
                   GET STARTED
