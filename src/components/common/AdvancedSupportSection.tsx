@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { useTheme } from '../context/ThemeContext';
-import Button from './Button';
+import { useTheme } from '../../context/ThemeContext';
+import { Button } from '../shared';
 
 const AdvancedSupportSection = () => {
   useTheme();

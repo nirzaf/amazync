@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
-import Button from './Button';
-import ServerNetworkAnimation from './ServerNetworkAnimation';
-import { useTheme } from '../context/ThemeContext';
-import OrbitingArrow from './OrbitingArrow';
+import { Button } from '../shared';
+import { ServerNetworkAnimation, OrbitingArrow } from '../common';
+import { useTheme } from '../../context/ThemeContext';
 
 const HeroSection = () => {
   const { colors } = useTheme();

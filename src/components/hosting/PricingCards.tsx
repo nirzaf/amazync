@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import Button from './Button';
+import Button from '../shared/Button';
 
 type Plan = {
   name: string;
