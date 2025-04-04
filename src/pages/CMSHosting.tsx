@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { ThemeProvider } from '../context/ThemeContext';
 import { Navbar, FAQ, Footer, Testimonials } from '../components/shared';
 import { CMSPricingCards, PreInstalledCMSSection } from '../components/cms-hosting';
-import { PerformanceReliabilitySection } from '../components/hosting';
 
 const CMSHosting = () => {
   return (
@@ -53,9 +52,6 @@ const CMSHosting = () => {
         
         {/* Pre-installed CMS Section */}
         <PreInstalledCMSSection />
-        
-        {/* Performance & Reliability Section */}
-        <PerformanceReliabilitySection />
         
         {/* Testimonials */}
         <Testimonials />
