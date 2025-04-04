@@ -416,8 +416,8 @@ const PricingCards = () => {
       </div>
 
       {/* Pricing Cards */}
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12 justify-items-center">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-8 md:gap-12 justify-items-center">
           {allPlans[activeTab]?.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -426,7 +426,7 @@ const PricingCards = () => {
               transition={{ duration: 0.5 }}
               className={`relative bg-white rounded-lg border-2 ${
                 plan.popular ? 'border-[#0037C1]' : 'border-gray-100'
-              } shadow-lg p-6 hover:shadow-xl transition-shadow w-[280px] h-[700px] flex flex-col justify-between mx-auto`}
+              } shadow-lg p-6 hover:shadow-xl transition-shadow w-[95%] sm:w-[280px] h-[700px] flex flex-col justify-between mx-auto`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
