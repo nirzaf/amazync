@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { ThemeProvider } from '../context/ThemeContext';
-import { Navbar, Features, FAQ, Footer, Testimonials } from '../components/shared';
-import { CMSPricingCards, CMSDevelopmentSection } from '../components/cms-hosting';
-import { PreInstalledCMSSection, HostingSupportSection, PerformanceReliabilitySection } from '../components/hosting';
+import { Navbar, FAQ, Footer, Testimonials } from '../components/shared';
+import { CMSPricingCards, PreInstalledCMSSection } from '../components/cms-hosting';
+import { PerformanceReliabilitySection } from '../components/hosting';
 
 const CMSHosting = () => {
   return (
@@ -51,17 +51,8 @@ const CMSHosting = () => {
         {/* CMS Pricing Cards */}
         <CMSPricingCards />
         
-        {/* Features Section */}
-        <Features />
-        
         {/* Pre-installed CMS Section */}
         <PreInstalledCMSSection />
-        
-        {/* CMS Development Section */}
-        <CMSDevelopmentSection />
-        
-        {/* Support Section */}
-        <HostingSupportSection />
         
         {/* Performance & Reliability Section */}
         <PerformanceReliabilitySection />

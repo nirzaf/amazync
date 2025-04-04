@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { ThemeProvider } from '../context/ThemeContext';
 import { Navbar, Features, Testimonials, FAQ, Footer } from '../components/shared';
 import { PricingCards, HostingSupportSection, HeroSection, PreInstalledCMSSection, PerformanceReliabilitySection } from '../components/hosting';
