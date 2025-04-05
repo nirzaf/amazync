@@ -1,16 +1,8 @@
 import { ThemeProvider } from './context/ThemeContext';
-import HeroSection from './components/HeroSection';
-import PricingCards from './components/PricingCards';
-import IntegrationSection from './components/IntegrationSection';
-import Features from './components/Features';
-import Testimonials from './components/Testimonials';
-import FAQ from './components/FAQ';
-import Footer from './components/Footer';
-import CMSDevelopmentSection from './components/CMSDevelopmentSection';
-import FrameworkDevelopmentSection from './components/FrameworkDevelopmentSection';
-import ControlPanelSection from './components/ControlPanelSection';
-import HostingSupportSection from './components/HostingSupportSection';
-import AdvancedSupportSection from './components/AdvancedSupportSection';
+import { Features, Testimonials, Footer } from './components/shared';
+import { FAQ, PricingCards, HostingSupportSection, HeroSection } from './components/hosting';
+import { IntegrationSection, FrameworkDevelopmentSection, ControlPanelSection, AdvancedSupportSection } from './components/common';
+import { CMSDevelopmentSection } from './components/cms-hosting';
 
 function App() {
   return (

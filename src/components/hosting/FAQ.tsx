@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 
 const FAQ = () => {
-  const { colors, gradients } = useTheme();
+  useTheme();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [

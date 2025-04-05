@@ -1,6 +1,6 @@
 import { ThemeProvider } from '../context/ThemeContext';
-import { Navbar, Features, Testimonials, FAQ, Footer } from '../components/shared';
-import { PricingCards, HostingSupportSection, HeroSection, PreInstalledCMSSection, PerformanceReliabilitySection } from '../components/hosting';
+import { Navbar, Features, Testimonials, Footer } from '../components/shared';
+import { PricingCards, HostingSupportSection, HeroSection, PreInstalledCMSSection, PerformanceReliabilitySection, FAQ } from '../components/hosting';
 
 const Hosting = () => {
   return (
