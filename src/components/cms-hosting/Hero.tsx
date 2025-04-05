@@ -45,7 +45,25 @@ const Hero = () => {
       <section
         className={`relative ${gradients.primary} text-white overflow-hidden`} // Use theme gradient
       >
-        {/* Optional: Add subtle background elements */}
+        {/* Background Video */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden -z-0">
+          <video
+            className="absolute w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="https://ik.imagekit.io/qch9hivley/cms-hosting-hero.png?updatedAt=1743447500000"
+          >
+            <source src="https://ik.imagekit.io/qch9hivley/Managed-WordPress.jpeg?updatedAt=1743814077234" type="video/mp4" />
+            {/* Fallback for browsers that don't support video */}
+            Your browser does not support the video tag.
+          </video>
+          {/* Overlay to ensure text readability */}
+          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        </div>
+
+        {/* Optional: Add subtle background elements - keeping this for additional texture */}
         <div className="absolute inset-0 opacity-10 -z-0">
           {/* Example background pattern or shapes */}
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -130,22 +148,24 @@ const Hero = () => {
               </motion.div>
             </div>
 
-            {/* Image Column */}
+            {/* Video Column */}
             <motion.div
               className="relative mt-10 md:mt-0 flex justify-center"
-              variants={imageVariants} // Apply animation variants to the image wrapper
+              variants={imageVariants} // Apply animation variants to the video wrapper
             >
-              {/* Optional: Decorative background blur */}
-              <div
-                className="absolute inset-0 rounded-full blur-3xl opacity-50 transform -translate-x-10 translate-y-10"
-                style={{ backgroundColor: colors.glaucousTransparent, width: '120%', height: '120%' }}
+              {/* Background image effect */}
+              <div 
+                className="absolute inset-0 rounded-lg blur-sm opacity-30 transform -translate-x-10 translate-y-10"
+                style={{ 
+                  backgroundImage: 'url(https://ik.imagekit.io/qch9hivley/Managed-WordPress.jpeg?updatedAt=1743814077234)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  width: '120%', 
+                  height: '120%' 
+                }}
               ></div>
-
-              <img
-                src="https://ik.imagekit.io/qch9hivley/cms-hosting-hero.png?updatedAt=1743447500000"
-                alt="CMS Hosting Illustration showing WordPress, Drupal, Joomla logos"
-                className="max-w-sm md:max-w-md lg:max-w-lg w-full h-auto rounded-lg shadow-2xl relative z-10" // Ensure image is above bg blur
-              />
+              
+              {/* Video element replacing the image */}
             </motion.div>
           </motion.div>
         </div>
