@@ -165,7 +165,6 @@ const Hero = () => {
                 }}
               ></div>
               
-              {/* Video element replacing the image */}
             </motion.div>
           </motion.div>
         </div>
