@@ -8,22 +8,42 @@ const PreInstalledCMSSection = () => {
     {
       name: 'WordPress',
       description: 'The world\'s most popular CMS with endless customization options and plugins.',
-      image: 'https://ik.imagekit.io/qch9hivley/wordpress-logo.png?updatedAt=1743447500000'
+      image: 'https://ik.imagekit.io/qch9hivley/CMS/wordpress-1.png?updatedAt=1743802994419'
     },
     {
       name: 'Drupal',
       description: 'Enterprise-grade CMS for complex, content-rich websites with advanced security.',
-      image: 'https://ik.imagekit.io/qch9hivley/drupal-logo.png?updatedAt=1743447500000'
+      image: 'https://ik.imagekit.io/qch9hivley/CMS/drupal-1.png?updatedAt=1743802992391'
     },
     {
       name: 'Joomla',
       description: 'Flexible CMS with a balance of features, user-friendliness, and extensibility.',
-      image: 'https://ik.imagekit.io/qch9hivley/joomla-logo.png?updatedAt=1743447500000'
+      image: 'https://ik.imagekit.io/qch9hivley/CMS/joomla-1.png?updatedAt=1743802993092'
     },
     {
       name: 'Magento',
       description: 'Powerful e-commerce platform for creating sophisticated online stores.',
-      image: 'https://ik.imagekit.io/qch9hivley/magento-logo.png?updatedAt=1743447500000'
+      image: 'https://ik.imagekit.io/qch9hivley/CMS/magento.png?updatedAt=1743802918040'
+    },
+    {
+      name: 'WooCommerce',
+      description: 'A customizable, open-source eCommerce platform built on WordPress.',
+      image: 'https://ik.imagekit.io/qch9hivley/CMS/woo-logo-e1666712636416-300x296.png?updatedAt=1743802994880'
+    },
+    {
+      name: 'Laravel',
+      description: 'A popular PHP framework for building web applications.',
+      image: 'https://ik.imagekit.io/qch9hivley/CMS/laravel_logo-e1666712721319-150x150.png?updatedAt=1743802992504'
+    },
+    {
+      name: 'PHPBB',
+      description: 'Free and open source forum software.',
+      image: 'https://ik.imagekit.io/qch9hivley/CMS/phpbb.png?updatedAt=1743802991056'
+    },
+    {
+      name: 'PrestaShop',
+      description: 'An efficient and innovative e-commerce solution with all the features you need.',
+      image: 'https://ik.imagekit.io/qch9hivley/CMS/prestashop.png?updatedAt=1743802890058'
     }
   ];
 
