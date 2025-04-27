@@ -5,3 +5,4 @@ export { default as HeroSection } from './HeroSection';
 export { default as PerformanceReliabilitySection } from './PerformanceReliabilitySection';
 export { default as PreInstalledCMSSection } from './PreInstalledCMSSection';
 export { default as HostingSupportSection } from './HostingSupportSection';
+export { default as WebHostingAnimation } from './WebHostingAnimation';

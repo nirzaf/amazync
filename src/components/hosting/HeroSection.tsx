@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { Button } from '../shared';
-import { ServerNetworkAnimation, OrbitingArrow } from '../common';
+import { OrbitingArrow } from '../common';
 import { useTheme } from '../../context/ThemeContext';
+import WebHostingAnimation from './WebHostingAnimation';
 
 const HeroSection = () => {
   const { colors } = useTheme();
@@ -81,10 +82,10 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </motion.div>
-      <div className="min-h-[700px] relative overflow-hidden bg-[#081D6B]">
+      <div className="min-h-[700px] relative overflow-hidden bg-[#192C99]">
         {/* Background Pattern and Animation Layer */}
         <div className="absolute inset-0 bg-opacity-90">
-          <ServerNetworkAnimation />
+          <WebHostingAnimation showTextOverlay={false} />
         </div>
         
         {/* Content Layer */}
@@ -128,10 +129,18 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="text-2xl md:text-3xl text-white mb-12 relative [text-shadow:_1px_1px_0_rgba(0,0,0,0.5)]"
+                className="text-2xl md:text-3xl text-white mb-12 relative flex justify-center"
               >
-                Powerful Website Hosting with
-                <span className={`text-[${colors.chiliRed}] font-bold`}> Unlimited Features</span>
+                <span
+                  className={`bg-[${colors.glaucous}]/30 backdrop-blur-md rounded-xl px-6 py-3 shadow-lg border border-[${colors.lavenderWeb}]/30 inline-block [text-shadow:_1px_1px_0_rgba(0,0,0,0.5)]`}
+                  style={{
+                    background: `linear-gradient(90deg, ${colors.glaucous}33 0%, ${colors.lavenderWeb}33 100%)`,
+                    borderColor: colors.lavenderWeb + '33',
+                  }}
+                >
+                  Powerful Website Hosting with
+                  <span className={`text-[${colors.chiliRed}] font-bold`}> Unlimited Features</span>
+                </span>
               </motion.p>
 
               {/* CTA Buttons */}
