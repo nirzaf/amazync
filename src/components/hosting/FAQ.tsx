@@ -30,7 +30,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-tl from-[#192C99] to-[#1934B6]">
+    <section className="bg-gradient-to-tl from-gray-50 to-gray-100 py-20">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ const FAQ = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-[#0B2A97] mb-4">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-gray-600">

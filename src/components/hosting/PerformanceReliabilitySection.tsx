@@ -51,7 +51,7 @@ const PerformanceReliabilitySection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-[#0B2A97] to-[#1934B6]">
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,10 +59,10 @@ const PerformanceReliabilitySection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">
             Performance & Reliability
           </h2>
-          <p className="text-xl text-white/80">
+          <p className="text-xl text-gray-600">
             Enterprise-grade infrastructure for maximum speed and reliability
           </p>
         </motion.div>
@@ -77,10 +77,10 @@ const PerformanceReliabilitySection = () => {
           {performanceStats.map((stat, index) => (
             <div 
               key={stat.label} 
-              className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center border border-white/20"
+              className="bg-white shadow-md rounded-lg p-6 text-center border border-gray-100"
             >
-              <p className="text-white/70 text-sm mb-2">{stat.label}</p>
-              <p className="text-3xl font-bold text-white">{stat.value}</p>
+              <p className="text-gray-600 text-sm mb-2">{stat.label}</p>
+              <p className="text-3xl font-bold text-gray-800">{stat.value}</p>
             </div>
           ))}
         </motion.div>
@@ -93,14 +93,14 @@ const PerformanceReliabilitySection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex items-start gap-6 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2"
+              className="bg-white shadow-md rounded-xl p-6 flex items-start gap-6 border border-gray-100 hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-2"
             >
-              <div className="flex-shrink-0 bg-white/10 p-3 rounded-lg">
+              <div className="flex-shrink-0 bg-gray-100 p-3 rounded-lg">
                 {feature.icon}
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">{feature.name}</h3>
-                <p className="text-white/80">{feature.description}</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">{feature.name}</h3>
+                <p className="text-gray-600">{feature.description}</p>
               </div>
             </motion.div>
           ))}
@@ -112,7 +112,7 @@ const PerformanceReliabilitySection = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-12 text-center"
         >
-          <button className="bg-white text-[#0B2A97] px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+          <button className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
             View Performance Reports
           </button>
         </motion.div>
