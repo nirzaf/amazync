@@ -243,7 +243,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-[#192C99] to-[#1934B6]">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -251,10 +251,10 @@ const Features = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-[#192C99] mb-4">
+          <h2 className="text-4xl font-bold text-white mb-4">
             Key Features
           </h2>
-          <p className="text-xl text-[#192C99]/80">
+          <p className="text-xl text-gray-300">
             Experience the best hosting features for your website
           </p>
         </motion.div>
@@ -266,30 +266,30 @@ const Features = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-white to-[#192C99]/5 backdrop-blur-sm rounded-xl p-8 flex flex-col items-center text-center hover:bg-gradient-to-br hover:from-white hover:to-[#192C99]/10 transition-all duration-300 transform hover:-translate-y-2 border border-[#192C99]/10 hover:border-[#192C99]/30 shadow-lg hover:shadow-xl relative overflow-hidden group"
+              className="bg-gradient-to-br from-[#192C99] to-[#1934B6] backdrop-blur-sm rounded-xl p-8 flex flex-col items-center text-center hover:bg-gradient-to-br hover:from-[#1934B6] hover:to-[#192C99] transition-all duration-300 transform hover:-translate-y-2 border border-[#7882B6]/30 hover:border-[#7882B6]/50 shadow-lg hover:shadow-xl relative overflow-hidden group"
             >
               {/* Decorative background element */}
-              <div className="absolute -right-10 -top-10 w-40 h-40 bg-[#192C99]/5 rounded-full group-hover:bg-[#192C99]/10 transition-all duration-500"></div>
+              <div className="absolute -right-10 -top-10 w-40 h-40 bg-[#7882B6]/20 rounded-full group-hover:bg-[#7882B6]/30 transition-all duration-500"></div>
               
               <motion.div 
-                className="text-5xl mb-6 bg-[#192C99]/10 p-5 rounded-full relative z-10 group-hover:bg-[#192C99]/20 transition-all duration-300 shadow-md group-hover:shadow-lg"
+                className="text-5xl mb-6 bg-[#7882B6]/30 text-white p-5 rounded-full relative z-10 group-hover:bg-[#7882B6]/40 transition-all duration-300 shadow-md group-hover:shadow-lg"
                 whileHover={{ rotate: [0, -5, 5, -5, 0], scale: 1.1 }}
                 transition={{ duration: 0.5 }}
               >
                 {feature.icon}
               </motion.div>
               
-              <h3 className="text-2xl font-bold text-[#192C99] mb-3 relative z-10">
+              <h3 className="text-2xl font-bold text-white mb-3 relative z-10">
                 {feature.title}
               </h3>
               
-              <p className="text-[#192C99]/80 relative z-10 leading-relaxed">
+              <p className="text-gray-300 relative z-10 leading-relaxed">
                 {feature.description}
               </p>
               
               {/* Bottom accent line with animation */}
               <motion.div 
-                className="h-1 bg-gradient-to-r from-[#192C99] to-[#FF6B2C] w-0 group-hover:w-1/2 absolute bottom-0 left-1/4 transition-all duration-300 rounded-t-full"
+                className="h-1 bg-gradient-to-r from-[#7882B6] to-[#ff3c14] w-0 group-hover:w-1/2 absolute bottom-0 left-1/4 transition-all duration-300 rounded-t-full"
                 initial={{ width: 0 }}
                 animate={{ width: '20%' }}
                 transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
