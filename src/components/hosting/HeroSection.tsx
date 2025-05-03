@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Button } from '../shared';
 import { OrbitingArrow } from '../common';
 import { useTheme } from '../../context/ThemeContext';
-import DataCenterAnimation from './DataCenterAnimation';
+import SimpleServerAnimation from './SimpleServerAnimation';
 
 
 const HeroSection = () => {
@@ -74,8 +74,8 @@ const HeroSection = () => {
         </div>
       </motion.div>
       <div className="min-h-[700px] relative overflow-hidden bg-[#192C99]">
-        {/* Stylized Data Center Animation */}
-        <DataCenterAnimation className="z-0" />
+        {/* Simple Server Animation Background */}
+        <SimpleServerAnimation className="z-0" />
         <div className="absolute inset-0 bg-black/60 z-10 pointer-events-none" />
 
         {/* Content Layer */}
