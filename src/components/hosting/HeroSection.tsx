@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import { Button } from '../shared';
 import { OrbitingArrow } from '../common';
 import { useTheme } from '../../context/ThemeContext';
-import WebHostingAnimation from './WebHostingAnimation';
+import DataCenterAnimation from './DataCenterAnimation';
+
 
 const HeroSection = () => {
   const { colors } = useTheme();
@@ -73,11 +74,10 @@ const HeroSection = () => {
         </div>
       </motion.div>
       <div className="min-h-[700px] relative overflow-hidden bg-[#192C99]">
-        {/* Background Pattern and Animation Layer */}
-        <div className="absolute inset-0 bg-opacity-90">
-          <WebHostingAnimation showTextOverlay={false} />
-        </div>
-        
+        {/* Stylized Data Center Animation */}
+        <DataCenterAnimation className="z-0" />
+        <div className="absolute inset-0 bg-black/60 z-10 pointer-events-none" />
+
         {/* Content Layer */}
         <div className="relative w-full h-full" style={{ zIndex: 20 }}>
           <div className="max-w-7xl mx-auto px-4 pt-40 pb-20">
