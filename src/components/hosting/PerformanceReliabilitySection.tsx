@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
 
 const PerformanceReliabilitySection = () => {
-  const { colors } = useTheme();
+  useTheme();
 
   const performanceFeatures = [
     {
@@ -74,7 +74,7 @@ const PerformanceReliabilitySection = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
         >
-          {performanceStats.map((stat, index) => (
+          {performanceStats.map((stat) => (
             <div 
               key={stat.label} 
               className="bg-white shadow-md rounded-lg p-6 text-center border border-gray-100"
