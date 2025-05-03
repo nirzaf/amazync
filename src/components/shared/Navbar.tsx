@@ -10,7 +10,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const { colors } = useTheme();
+  useTheme(); // Using the theme context without destructuring to avoid lint errors
+  
+  // Close mobile menu when changing routes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,7 +90,9 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-blue-600"
+              className="text-white hover:text-[#DBD9EC] transition-colors duration-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DBD9EC]/50"
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -100,69 +107,61 @@ const Navbar = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden bg-gradient-to-b from-[#192C99] to-[#1934B6] absolute left-0 right-0 top-16 shadow-lg border-t border-[#7882B6]/30 z-50"
             >
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <div className="flex justify-center mb-4">
-                  <img 
-                    src="https://ik.imagekit.io/qch9hivley/image.png?updatedAt=1743447013040" 
-                    alt="AmaZyncHost Logo" 
-                    className="h-8 w-auto"
-                  />
-                </div>
-                <Link
-                  to="/hosting"
-                  className="block px-3 py-2 text-white hover:text-white/80"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Web Hosting
-                </Link>
-                <Link
-                  to="/cms-hosting"
-                  className="block px-3 py-2 text-white hover:text-white/80"
-                  onClick={() => setIsOpen(false)}
-                >
-                  CMS Hosting
-                </Link>
-                <Link
-                  to="/reseller-hosting"
-                  className="block px-3 py-2 text-white hover:text-white/80"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Reseller Hosting
-                </Link>
-                <Link
-                  to="/cloud-vps"
-                  className="block px-3 py-2 text-white hover:text-white/80"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Cloud VPS
-                </Link>
-                <Link
-                  to="/email-hosting"
-                  className="block px-3 py-2 text-white hover:text-white/80"
-                  onClick={() => setIsOpen(false)}
-                >
-                  E-Mail Hosting
-                </Link>
-                <Link
-                  to="/domains"
-                  className="block px-3 py-2 text-white hover:text-white/80"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Domains
-                </Link>
-                <Link
-                  to="/ssl"
-                  className="block px-3 py-2 text-white hover:text-white/80"
-                  onClick={() => setIsOpen(false)}
-                >
-                  SSL
-                </Link>
-                <div className="mt-4">
-                  <Button variant="secondary" size="sm" className="w-full">
+              <div className="px-4 pt-4 pb-6 space-y-2 max-h-[80vh] overflow-y-auto">
+                {/* Logo removed as requested */}
+                {[
+                  { path: '/hosting', label: 'Web Hosting' },
+                  { path: '/cms-hosting', label: 'CMS Hosting' },
+                  { path: '/reseller-hosting', label: 'Reseller Hosting' },
+                  { path: '/cloud-vps', label: 'Cloud VPS' },
+                  { path: '/email-hosting', label: 'E-Mail Hosting' },
+                  { path: '/domains', label: 'Domains' },
+                  { path: '/ssl', label: 'SSL' }
+                ].map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`block px-4 py-3 rounded-lg transition-all duration-300 ${location.pathname === item.path 
+                      ? 'bg-[#7882B6]/20 text-white font-medium' 
+                      : 'text-white/90 hover:bg-[#7882B6]/10 hover:text-white'}`}
+                  >
+                    {item.label}
+                    {location.pathname === item.path && (
+                      <motion.div 
+                        layoutId="activeIndicator"
+                        className="h-0.5 bg-[#ff3c14] mt-1 rounded-full"
+                        initial={{ width: 0 }}
+                        animate={{ width: '30%' }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    )}
+                  </Link>
+                ))}
+                <div className="mt-6 px-2">
+                  <Button variant="secondary" size="sm" className="w-full py-3">
                     Buy Now!
                   </Button>
+                </div>
+                
+                {/* Social links */}
+                <div className="mt-6 pt-4 border-t border-[#7882B6]/30 flex justify-center space-x-4">
+                  {['Twitter', 'Facebook', 'Instagram'].map((social) => (
+                    <a 
+                      key={social} 
+                      href={`#${social.toLowerCase()}`}
+                      className="text-white/70 hover:text-white transition-colors duration-300"
+                      aria-label={social}
+                    >
+                      <span className="sr-only">{social}</span>
+                      <div className="w-8 h-8 flex items-center justify-center rounded-full bg-[#7882B6]/20 hover:bg-[#7882B6]/40 transition-colors duration-300">
+                        {social === 'Twitter' && 'X'}
+                        {social === 'Facebook' && 'f'}
+                        {social === 'Instagram' && 'IG'}
+                      </div>
+                    </a>
+                  ))}
                 </div>
               </div>
             </motion.div>

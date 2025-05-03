@@ -47,26 +47,26 @@ const HeroSection = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="bg-[#DBD9EC]/90 backdrop-blur-sm text-gray-700 py-3 shadow-sm"
+        className="bg-[#DBD9EC]/90 backdrop-blur-sm text-gray-700 flex items-center justify-center shadow-sm py-2 md:py-3 lg:py-4"
       >
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        <div className="max-w-7xl w-full mx-auto px-4 flex justify-center items-center">
           <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="flex items-center space-x-4 md:space-x-8"
+            className="flex items-center justify-center space-x-6 md:space-x-12"
           >
-            <div className="flex items-center gap-2 hover:text-white transition-all duration-300 cursor-pointer group">
-              <span className="text-blue-300 group-hover:text-white transition-all duration-300 transform group-hover:scale-110">💬</span>
-              <span>Live Chat</span>
+            <div className="flex items-center gap-2 hover:text-gray-900 transition-all duration-300 cursor-pointer group">
+              <span className="text-blue-500 group-hover:text-blue-700 transition-all duration-300 transform group-hover:scale-110">💬</span>
+              <span className="font-medium">Live Chat</span>
             </div>
-            <div className={`flex items-center gap-2 hover:text-[${colors.lavenderWeb}] transition-colors cursor-pointer group`}>
-              <span className={`text-[${colors.glaucous}] group-hover:text-[${colors.lavenderWeb}] transition-colors`}>❓</span>
-              <span className="hidden md:inline">Help Center</span>
+            <div className="flex items-center gap-2 hover:text-gray-900 transition-all duration-300 cursor-pointer group">
+              <span className="text-blue-500 group-hover:text-blue-700 transition-all duration-300">❓</span>
+              <span className="hidden sm:inline font-medium">Help Center</span>
             </div>
-            <div className={`flex items-center gap-2 hover:text-[${colors.lavenderWeb}] transition-colors cursor-pointer group`}>
-              <span className={`text-[${colors.glaucous}] group-hover:text-[${colors.lavenderWeb}] transition-colors`}>📞</span>
-              <span className="hidden md:inline">+94752021670</span>
+            <div className="flex items-center gap-2 hover:text-gray-900 transition-all duration-300 cursor-pointer group">
+              <span className="text-blue-500 group-hover:text-blue-700 transition-all duration-300">📞</span>
+              <span className="hidden sm:inline font-medium">+94752021670</span>
             </div>
           </motion.div>
           {/* Cart link removed as requested */}
