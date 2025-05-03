@@ -47,7 +47,7 @@ const HeroSection = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="bg-[#1934B6]/90 backdrop-blur-sm text-white py-3 shadow-md"
+        className="bg-[#DBD9EC]/90 backdrop-blur-sm text-gray-700 py-3 shadow-sm"
       >
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <motion.div 
@@ -69,17 +69,7 @@ const HeroSection = () => {
               <span className="hidden md:inline">+94752021670</span>
             </div>
           </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex items-center gap-4"
-          >
-            <div className={`flex items-center gap-2 hover:text-[${colors.lavenderWeb}] transition-colors cursor-pointer group`}>
-              <span className={`text-[${colors.glaucous}] group-hover:text-[${colors.lavenderWeb}] transition-colors`}>🛒</span>
-              <span className="hidden md:inline">Cart</span>
-            </div>
-          </motion.div>
+          {/* Cart link removed as requested */}
         </div>
       </motion.div>
       <div className="min-h-[700px] relative overflow-hidden bg-[#192C99]">

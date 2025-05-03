@@ -24,7 +24,7 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 w-full z-50 transition-all duration-300 bg-blue-600 shadow-lg"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gradient-to-r from-[#192C99] to-[#1934B6] shadow-lg' : 'bg-gradient-to-r from-[#192C99]/95 to-[#1934B6]/95 backdrop-blur-sm'}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
