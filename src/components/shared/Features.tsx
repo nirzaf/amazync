@@ -243,60 +243,186 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-[#192C99] to-[#1934B6]">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-20 bg-gradient-to-br from-[#192C99] to-[#1934B6] relative overflow-hidden">
+      {/* Animated background particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-white/10"
+            style={{
+              width: Math.random() * 10 + 5 + 'px',
+              height: Math.random() * 10 + 5 + 'px',
+              left: Math.random() * 100 + '%',
+              top: Math.random() * 100 + '%',
+            }}
+            animate={{
+              y: [0, -100, 0],
+              opacity: [0, 1, 0],
+              scale: [0, 1.5, 0]
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: Math.random() * 10 + 10,
+              delay: Math.random() * 5,
+              ease: 'easeInOut'
+            }}
+          />
+        ))}
+      </div>
+      
+      {/* Animated gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#192C99]/80 via-transparent to-[#ff3c14]/20 animate-pulse" 
+           style={{ animationDuration: '8s' }} />
+      
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Key Features
-          </h2>
-          <p className="text-xl text-gray-300">
-            Experience the best hosting features for your website
-          </p>
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="inline-block relative"
+          >
+            <h2 className="text-5xl font-bold text-white mb-4 relative z-10 drop-shadow-lg">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-[#DBD9EC]">Key Features</span>
+            </h2>
+            <motion.div 
+              className="absolute -inset-1 rounded-lg bg-gradient-to-r from-[#7882B6] via-[#ff3c14] to-[#7882B6] opacity-70 blur-lg"
+              animate={{ 
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+              }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
+              style={{ backgroundSize: '200% 200%' }}
+            />
+          </motion.div>
+          <motion.p 
+            className="text-xl text-gray-300 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            Experience the best hosting features for your website with our enterprise-grade infrastructure
+          </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-[#192C99] to-[#1934B6] backdrop-blur-sm rounded-xl p-8 flex flex-col items-center text-center hover:bg-gradient-to-br hover:from-[#1934B6] hover:to-[#192C99] transition-all duration-300 transform hover:-translate-y-2 border border-[#7882B6]/30 hover:border-[#7882B6]/50 shadow-lg hover:shadow-xl relative overflow-hidden group"
+              className="bg-gradient-to-br from-[#192C99]/90 to-[#1934B6]/90 backdrop-blur-md rounded-xl p-8 flex flex-col items-center text-center hover:bg-gradient-to-br hover:from-[#1934B6] hover:to-[#192C99] transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-[#7882B6]/30 hover:border-[#7882B6]/70 shadow-lg hover:shadow-2xl relative overflow-hidden group"
             >
-              {/* Decorative background element */}
-              <div className="absolute -right-10 -top-10 w-40 h-40 bg-[#7882B6]/20 rounded-full group-hover:bg-[#7882B6]/30 transition-all duration-500"></div>
+              {/* Decorative background elements */}
+              <div className="absolute -right-10 -top-10 w-40 h-40 bg-[#7882B6]/20 rounded-full group-hover:bg-[#7882B6]/40 group-hover:scale-110 transition-all duration-500"></div>
+              <div className="absolute -left-10 -bottom-10 w-32 h-32 bg-[#ff3c14]/10 rounded-full group-hover:bg-[#ff3c14]/20 group-hover:scale-110 transition-all duration-700 delay-100"></div>
+              
+              {/* Animated dots/particles */}
+              {[...Array(5)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-1.5 h-1.5 rounded-full bg-white/40 hidden group-hover:block"
+                  style={{
+                    left: 20 + (i * 15) + '%',
+                    top: '85%',
+                  }}
+                  initial={{ y: 0, opacity: 0 }}
+                  animate={{ y: -40 - (i * 10), opacity: [0, 1, 0] }}
+                  transition={{ 
+                    repeat: Infinity, 
+                    duration: 1.5 + (i * 0.2), 
+                    delay: i * 0.1,
+                    ease: 'easeOut'
+                  }}
+                />
+              ))}
               
               <motion.div 
-                className="text-5xl mb-6 bg-[#7882B6]/30 text-white p-5 rounded-full relative z-10 group-hover:bg-[#7882B6]/40 transition-all duration-300 shadow-md group-hover:shadow-lg"
-                whileHover={{ rotate: [0, -5, 5, -5, 0], scale: 1.1 }}
-                transition={{ duration: 0.5 }}
+                className="text-5xl mb-6 bg-gradient-to-br from-[#7882B6]/40 to-[#192C99]/40 text-white p-5 rounded-full relative z-10 group-hover:from-[#7882B6]/60 group-hover:to-[#192C99]/60 transition-all duration-500 shadow-md group-hover:shadow-xl ring-2 ring-white/10 group-hover:ring-white/30"
+                whileHover={{ rotate: [0, -5, 5, -5, 0], scale: 1.2 }}
+                animate={{ 
+                  boxShadow: [
+                    '0 5px 15px rgba(0,0,0,0.1)', 
+                    '0 5px 25px rgba(120,130,182,0.3)', 
+                    '0 5px 15px rgba(0,0,0,0.1)'
+                  ]
+                }}
+                transition={{ 
+                  boxShadow: {
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: 'easeInOut'
+                  },
+                  duration: 0.5 
+                }}
               >
                 {feature.icon}
               </motion.div>
               
-              <h3 className="text-2xl font-bold text-white mb-3 relative z-10">
+              <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-[#DBD9EC] mb-3 relative z-10 group-hover:scale-105 transition-transform duration-300">
                 {feature.title}
               </h3>
               
-              <p className="text-gray-300 relative z-10 leading-relaxed">
+              <p className="text-gray-300 relative z-10 leading-relaxed group-hover:text-white transition-colors duration-300">
                 {feature.description}
               </p>
               
               {/* Bottom accent line with animation */}
               <motion.div 
-                className="h-1 bg-gradient-to-r from-[#7882B6] to-[#ff3c14] w-0 group-hover:w-1/2 absolute bottom-0 left-1/4 transition-all duration-300 rounded-t-full"
+                className="h-1.5 bg-gradient-to-r from-[#7882B6] via-white to-[#ff3c14] w-0 group-hover:w-3/4 absolute bottom-0 left-[12.5%] transition-all duration-500 rounded-t-full"
                 initial={{ width: 0 }}
                 animate={{ width: '20%' }}
                 transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
               />
+              
+              {/* Hover reveal button */}
+              <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-[#7882B6]/30 to-transparent group-hover:h-16 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                <div className="absolute bottom-4 left-0 right-0 text-center">
+                  <span className="text-white/80 text-sm font-medium hover:text-white transition-colors cursor-pointer inline-flex items-center">
+                    Learn more
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
+        
+        {/* Call-to-action button */}
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+        >
+          <motion.button 
+            className="px-8 py-4 bg-gradient-to-r from-[#7882B6] to-[#ff3c14] text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <span className="relative z-10">Explore All Features</span>
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-r from-[#ff3c14] to-[#7882B6]"
+              initial={{ x: '100%' }}
+              whileHover={{ x: 0 }}
+              transition={{ duration: 0.4 }}
+              style={{ opacity: 0.85 }}
+            />
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
