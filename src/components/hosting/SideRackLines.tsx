@@ -23,8 +23,10 @@ const SideRackLines: React.FC<SideRackLinesProps> = ({ side, className = '' }) =
     function resize() {
       width = 80;
       height = 700;
-      canvas.width = width;
-      canvas.height = height;
+      if (canvas) {
+        canvas.width = width;
+        canvas.height = height;
+      }
     }
     resize();
     window.addEventListener('resize', resize);

@@ -15,11 +15,9 @@ const DataCenterAnimation: React.FC<DataCenterAnimationProps> = ({ className = '
   
   // Enhanced color palette
   const rackColor = '#0F0F0F';
-  const rackHighlight = '#2A2A2A';
   const floorColor = '#0A1642';
   const ceilingColor = '#0A0E24';
   const lightColor = '#DBD9EC';
-  const ductColor = '#1A1A1A';
   const cableColors = ['#3B5CE9', '#1934B6', '#7882B6', '#192C99'];
   const indicatorColors = ['#4AFF91', '#3B5CE9', '#DBD9EC', '#1934B6', '#FF3C14'];
   
@@ -102,7 +100,7 @@ const DataCenterAnimation: React.FC<DataCenterAnimationProps> = ({ className = '
                 <div 
                   className="absolute inset-0 rounded-md"
                   style={{ 
-                    backgroundColor: ductColor,
+                    backgroundColor: '#1A1A1A',
                     border: '1px solid #3A3A3A',
                     boxShadow: 'inset 0 -2px 4px rgba(0,0,0,0.4)',
                   }}

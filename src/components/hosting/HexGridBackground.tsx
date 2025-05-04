@@ -22,8 +22,10 @@ const HexGridBackground: React.FC<HexGridBackgroundProps> = ({ className = '', h
     function resize() {
       width = window.innerWidth;
       height = 700;
-      canvas.width = width;
-      canvas.height = height;
+      if (canvas) {
+        canvas.width = width;
+        canvas.height = height;
+      }
     }
     resize();
     window.addEventListener('resize', resize);
