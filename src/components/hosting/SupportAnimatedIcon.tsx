@@ -94,11 +94,23 @@ const SupportAnimatedIcon: React.FC = () => {
             85% { opacity: 0.2; }
           }
           
-          .amazync-clock-hand {
-            transform-origin: 72px 50px;
-            animation: amazync-clockSweep 3s linear infinite;
+          /* Clock hand animations with proper transform origin */
+          .amazync-hour-hand {
+            transform-origin: 30px 50px; /* Center of the clock */
+            animation: amazync-hourHandSweep 12s linear infinite;
           }
-          @keyframes amazync-clockSweep {
+          
+          .amazync-minute-hand {
+            transform-origin: 30px 50px; /* Center of the clock */
+            animation: amazync-minuteHandSweep 3s linear infinite;
+          }
+          
+          @keyframes amazync-hourHandSweep {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+          
+          @keyframes amazync-minuteHandSweep {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
           }
@@ -149,8 +161,8 @@ const SupportAnimatedIcon: React.FC = () => {
           <text className="amazync-clock-text" x="18" y="50">9</text>
           
           {/* Clock Hands (animated) */}
-          <line className="amazync-clock-hand" x1="30" y1="50" x2="30" y2="40" />
-          <line className="amazync-clock-hand" x1="30" y1="50" x2="38" y2="50" />
+          <line className="amazync-clock-hand amazync-hour-hand" x1="30" y1="50" x2="30" y2="40" />
+          <line className="amazync-clock-hand amazync-minute-hand" x1="30" y1="50" x2="38" y2="50" />
           
           {/* 24/7 Text */}
           <text className="amazync-clock-text" x="30" y="75" style={{ fontSize: '8px' }}>24/7</text>
