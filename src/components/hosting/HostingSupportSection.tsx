@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import AnimatedServerIcon from './AnimatedServerIcon';
 import SupportAnimatedIcon from './SupportAnimatedIcon';
+import SecurityAnimatedIcon from './SecurityAnimatedIcon';
 import { useTheme } from '../../context/ThemeContext';
 
 const HostingSupportSection = () => {
@@ -57,6 +58,10 @@ const HostingSupportSection = () => {
 ) : service.name === '24/7 Technical Support' ? (
   <div className="flex items-end justify-center" style={{ minHeight: 300, height: 300, width: '100%' }}>
     <SupportAnimatedIcon />
+  </div>
+) : service.name === 'Security & Maintenance' ? (
+  <div className="flex items-end justify-center" style={{ minHeight: 300, height: 300, width: '100%' }}>
+    <SecurityAnimatedIcon />
   </div>
 ) : (
   <div className="aspect-video overflow-hidden">
