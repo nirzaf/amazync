@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import AnimatedServerIcon from './AnimatedServerIcon';
 import { useTheme } from '../../context/ThemeContext';
 
 const HostingSupportSection = () => {
@@ -48,14 +49,19 @@ const HostingSupportSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex flex-col items-center text-center hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2 border border-white/20 hover:border-white/40 shadow-lg hover:shadow-xl relative overflow-hidden group"
             >
-              <div className="aspect-video overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.name}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
+              {service.name === 'Managed Hosting' ? (
+  <div className="flex items-end justify-center" style={{ minHeight: 300, height: 300, width: '100%' }}>
+    <AnimatedServerIcon />
+  </div>
+) : (
+  <div className="aspect-video overflow-hidden">
+    <img
+      src={service.image}
+      alt={service.name}
+      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+    />
+  </div>
+)}              <div className="p-6">
                 <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
                 <p className="text-white/80">{service.description}</p>
               </div>
