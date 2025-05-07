@@ -12,9 +12,9 @@ const SecurityAnimatedIcon: React.FC = () => {
           .amazync-security-icon-container {
             width: 300px;
             height: 300px;
-            background-color: #fff;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12), 0 4px 10px rgba(0,0,0,0.08);
+            background-color: #dbeafe;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1), 0 8px 8px rgba(0,0,0,0.1);
             position: relative;
             overflow: hidden;
             display: flex;
@@ -24,8 +24,8 @@ const SecurityAnimatedIcon: React.FC = () => {
           }
           
           .amazync-security-icon-svg {
-            width: 100%;
-            height: 100%;
+            width: 95%;
+            height: 95%;
             display: block;
             overflow: visible;
           }
