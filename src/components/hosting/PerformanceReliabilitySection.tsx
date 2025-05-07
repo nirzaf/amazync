@@ -1,10 +1,16 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
 import { 
+  // Feature icons
   SSDStorageIcon, 
   UptimeGuaranteeIcon, 
   GlobalCDNIcon, 
-  AutomatedBackupIcon 
+  AutomatedBackupIcon,
+  // Performance stats icons
+  PageLoadIcon,
+  UptimeStatsIcon,
+  DataCentersIcon,
+  DDoSProtectionIcon
 } from '../../components/icons/hosting';
 
 const PerformanceReliabilitySection = () => {
@@ -34,10 +40,26 @@ const PerformanceReliabilitySection = () => {
   ];
 
   const performanceStats = [
-    { label: 'Average Page Load Time', value: '0.5s' },
-    { label: 'Uptime', value: '99.9%' },
-    { label: 'Global Data Centers', value: '24' },
-    { label: 'DDoS Protection', value: 'Included' }
+    { 
+      label: 'Average Page Load Time', 
+      value: '0.5s',
+      icon: <PageLoadIcon />
+    },
+    { 
+      label: 'Uptime', 
+      value: '99.9%',
+      icon: <UptimeStatsIcon />
+    },
+    { 
+      label: 'Global Data Centers', 
+      value: '24',
+      icon: <DataCentersIcon />
+    },
+    { 
+      label: 'DDoS Protection', 
+      value: 'Included',
+      icon: <DDoSProtectionIcon />
+    }
   ];
 
   return (
@@ -64,14 +86,20 @@ const PerformanceReliabilitySection = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
         >
-          {performanceStats.map((stat) => (
-            <div 
+          {performanceStats.map((stat, index) => (
+            <motion.div 
               key={stat.label} 
-              className="bg-white shadow-md rounded-lg p-6 text-center border border-gray-100"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 + (index * 0.1) }}
+              className="bg-white shadow-lg rounded-xl p-6 text-center border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-blue-100 group"
             >
-              <p className="text-gray-600 text-sm mb-2">{stat.label}</p>
-              <p className="text-3xl font-bold text-gray-800">{stat.value}</p>
-            </div>
+              <div className="flex justify-center mb-4">
+                {stat.icon}
+              </div>
+              <p className="text-gray-600 text-sm mb-1 group-hover:text-blue-600 transition-colors duration-300">{stat.label}</p>
+              <p className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">{stat.value}</p>
+            </motion.div>
           ))}
         </motion.div>
 
