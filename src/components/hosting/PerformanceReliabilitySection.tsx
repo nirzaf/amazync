@@ -84,7 +84,7 @@ const PerformanceReliabilitySection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16 mx-auto max-w-6xl px-2"
         >
           {performanceStats.map((stat, index) => (
             <motion.div 
@@ -92,13 +92,15 @@ const PerformanceReliabilitySection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 + (index * 0.1) }}
-              className="bg-white shadow-lg rounded-xl p-6 text-center border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-blue-100 group"
+              className="bg-white shadow-lg rounded-xl p-4 sm:p-5 md:p-6 text-center border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-blue-100 group flex flex-col justify-center items-center h-full"
+              aria-label={`${stat.label}: ${stat.value}`}
+              role="region"
             >
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-center mb-3 md:mb-4 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
                 {stat.icon}
               </div>
-              <p className="text-gray-600 text-sm mb-1 group-hover:text-blue-600 transition-colors duration-300">{stat.label}</p>
-              <p className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">{stat.value}</p>
+              <p className="text-gray-600 text-xs sm:text-sm mb-1 group-hover:text-blue-600 transition-colors duration-300 font-medium">{stat.label}</p>
+              <p className="text-2xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">{stat.value}</p>
             </motion.div>
           ))}
         </motion.div>
