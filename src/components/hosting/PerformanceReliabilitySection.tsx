@@ -1,5 +1,11 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
+import { 
+  SSDStorageIcon, 
+  UptimeGuaranteeIcon, 
+  GlobalCDNIcon, 
+  AutomatedBackupIcon 
+} from '../../components/icons/hosting';
 
 const PerformanceReliabilitySection = () => {
   useTheme();
@@ -8,38 +14,22 @@ const PerformanceReliabilitySection = () => {
     {
       name: 'High-Speed SSD Storage',
       description: 'All hosting plans include ultra-fast SSD storage for lightning-quick website loading times.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      )
+      icon: <SSDStorageIcon />
     },
     {
       name: '99.9% Uptime Guarantee',
       description: 'We guarantee 99.9% uptime for all our hosting services with redundant infrastructure.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      )
+      icon: <UptimeGuaranteeIcon />
     },
     {
       name: 'Global CDN Network',
       description: 'Content delivery network with global edge locations for faster content delivery worldwide.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      )
+      icon: <GlobalCDNIcon />
     },
     {
       name: 'Automated Backups',
       description: 'Daily automated backups with easy one-click restore options to keep your data safe.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
-        </svg>
-      )
+      icon: <AutomatedBackupIcon />
     }
   ];
 
