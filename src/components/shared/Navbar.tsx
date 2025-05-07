@@ -80,8 +80,16 @@ const Navbar = () => {
             <Button
               variant="secondary"
               size="sm"
-              className="ml-auto"
+              className="ml-auto px-6 py-2 rounded-full font-extrabold bg-gradient-to-r from-[#FF6B2C] via-[#FF3C14] to-[#FFB347] text-white shadow-[0_4px_24px_0_rgba(255,107,44,0.25)] hover:scale-105 hover:shadow-[0_2px_32px_0_rgba(255,60,20,0.35)] transition-all duration-200 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#FFB347]/70 animate-pulse"
+              style={{ letterSpacing: 1 }}
+              aria-label="Buy Now!"
             >
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" className="inline-block mr-1 animate-bounce">
+                <path d="M6.5 6.5V5a3.5 3.5 0 117 0v1.5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <rect x="3.5" y="6.5" width="13" height="10" rx="2.5" stroke="#fff" strokeWidth="1.5"/>
+                <circle cx="8.5" cy="13.5" r="1" fill="#fff"/>
+                <circle cx="11.5" cy="13.5" r="1" fill="#fff"/>
+              </svg>
               Buy Now!
             </Button>
           </div>
@@ -140,7 +148,19 @@ const Navbar = () => {
                   </Link>
                 ))}
                 <div className="mt-6 px-2">
-                  <Button variant="secondary" size="sm" className="w-full py-3">
+                  <Button 
+                    variant="secondary" 
+                    size="sm" 
+                    className="w-full py-3 rounded-full font-extrabold bg-gradient-to-r from-[#FF6B2C] via-[#FF3C14] to-[#FFB347] text-white shadow-[0_4px_24px_0_rgba(255,107,44,0.25)] hover:scale-105 hover:shadow-[0_2px_32px_0_rgba(255,60,20,0.35)] transition-all duration-200 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#FFB347]/70 animate-pulse" 
+                    style={{ letterSpacing: 1 }}
+                    aria-label="Buy Now!"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" className="inline-block mr-1 animate-bounce">
+                      <path d="M6.5 6.5V5a3.5 3.5 0 117 0v1.5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <rect x="3.5" y="6.5" width="13" height="10" rx="2.5" stroke="#fff" strokeWidth="1.5"/>
+                      <circle cx="8.5" cy="13.5" r="1" fill="#fff"/>
+                      <circle cx="11.5" cy="13.5" r="1" fill="#fff"/>
+                    </svg>
                     Buy Now!
                   </Button>
                 </div>
