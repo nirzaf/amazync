@@ -1,11 +1,11 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 import Hosting from './pages/Hosting';
 import CMSHosting from './pages/CMSHosting';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
-    element: <Navigate to="/hosting" replace />
+    element: <Hosting />
   },
   {
     path: '/hosting',
