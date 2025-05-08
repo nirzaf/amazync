@@ -31,15 +31,15 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gradient-to-r from-[#192C99] to-[#1934B6] shadow-lg' : 'bg-gradient-to-r from-[#192C99]/95 to-[#1934B6]/95 backdrop-blur-sm'}`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
+        <div className="flex justify-between h-14 sm:h-16">
           <div className="flex items-center">
-            <Link to="/hosting" className="flex items-center relative">
+            <Link to="/hosting" className="flex items-center relative py-2">
               <div className="relative z-10">
                 <img 
                   src="https://ik.imagekit.io/qch9hivley/image.png?updatedAt=1743447013040" 
                   alt="AmaZyncHost Logo" 
-                  className="h-8 w-auto transition-opacity duration-300 hover:opacity-90"
+                  className="h-6 sm:h-8 w-auto transition-opacity duration-300 hover:opacity-90"
                 />
               </div>
               <OrbitingFireball />
@@ -98,7 +98,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-[#DBD9EC] transition-colors duration-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DBD9EC]/50"
+              className="text-white hover:text-[#DBD9EC] transition-colors duration-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DBD9EC]/50 touch-manipulation"
               aria-label="Toggle menu"
               aria-expanded={isOpen}
             >
@@ -115,9 +115,9 @@ const Navbar = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden bg-gradient-to-b from-[#192C99] to-[#1934B6] absolute left-0 right-0 top-16 shadow-lg border-t border-[#7882B6]/30 z-50"
+              className="md:hidden overflow-hidden bg-gradient-to-b from-[#192C99] to-[#1934B6] absolute left-0 right-0 top-14 sm:top-16 shadow-lg border-t border-[#7882B6]/30 z-50"
             >
-              <div className="px-4 pt-4 pb-6 space-y-2 max-h-[80vh] overflow-y-auto">
+              <div className="px-3 pt-3 pb-5 space-y-1 max-h-[80vh] overflow-y-auto">
                 {/* Logo removed as requested */}
                 {[
                   { path: '/hosting', label: 'Web Hosting' },
@@ -131,7 +131,7 @@ const Navbar = () => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`block px-4 py-3 rounded-lg transition-all duration-300 ${location.pathname === item.path 
+                    className={`block px-3 py-3.5 rounded-lg transition-all duration-300 text-base ${location.pathname === item.path 
                       ? 'bg-[#7882B6]/20 text-white font-medium' 
                       : 'text-white/90 hover:bg-[#7882B6]/10 hover:text-white'}`}
                   >
